@@ -1,0 +1,139 @@
+/*
+GEROMAI BRAND — FONT & COLORS
+
+FONT FAMILY
+Primary: Eurostile Extended Bold
+Style: Geometric / Futuristic / Tech Sans-Serif
+
+COLOR PALETTE
+
+Deep Space Navy: #020817
+Midnight Navy: #061126
+Pure White: #F7F9FC
+Electric Blue: #126BFF
+AI Blue: #008CFF
+Cyan: #16C8F2
+Soft Ice Blue: #B9E9FF
+
+PRIMARY GRADIENT
+Electric Blue → Cyan
+#126BFF → #16C8F2
+
+WORDMARK
+"gerom" — #F7F9FC
+"AI" — #126BFF → #16C8F2
+
+LOGO SYMBOL
+White — #F7F9FC
+Electric Blue — #126BFF
+Cyan — #16C8F2
+
+BACKGROUND
+Primary — #020817
+Secondary — #061126
+
+*/
+:root {
+    --font-main: 'Eurostile Extended', 'Eurostile Next';
+
+    --color-deepSpaceNavi: #020817;
+    --color-midnightNavy: #061126;
+    --color-deepBlue: #092F70;
+    --color-pureWhite: #F7F9FC;
+    --color-electricBlue: #126BFF;
+    --color-aiBlue: #008CFF;
+    --color-cyan: #16C8F2;
+    --color-softIceBlue: #B9E9FF;
+    --padding: 15px;
+    --radius:15px;
+}
+html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-main);
+    background: radial-gradient(
+            circle,
+            var(--color-deepBlue) 0%,
+            var(--color-deepSpaceNavi) 90%
+    );
+}
+header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+.logo{
+    width: 60%;
+    background-color: transparent;
+}
+.menu-links-div{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.menu-links-ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.menu-links-li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: var(--color-pureWhite);
+}
+button {
+    background-color: var(--color-electricBlue);
+    padding: var(--padding);
+    color: var(--color-pureWhite);
+    border-radius: var(--radius);
+    border: none;
+}
+button:hover {
+    padding: 20px;
+    border-radius: 20px;
+}
+body{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+);
+}
+main {
+    flex: 1; /* pushes footer down */
+}
+
+footer {
+    color: var(--color-pureWhite);
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+h1 , h2 , h3, h4, h5, h6{
+    color: var(--color-softIceBlue);
+}
