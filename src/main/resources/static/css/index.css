@@ -60,7 +60,7 @@ body {
     margin: 0;
     padding: 0;
 
-    min-width: 320px;
+    min-width: 200px;
 
     background: var(--deep-space);
 
@@ -205,7 +205,7 @@ body {
     margin: 0 auto;
 
     padding:
-            65px 0;
+            30px 0;
 
     display: flex;
 
@@ -724,7 +724,7 @@ h1 span {
                 min(100% - 32px, 1000px);
 
         padding:
-                45px 0;
+               45px 0;
     }
 
 
