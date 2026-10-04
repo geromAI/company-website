@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/base}">
+
+<head>
+
+    <title>Get Started</title>
+
+    <th:block layout:fragment="page-css">
+        <link rel="stylesheet"
+              th:href="@{/css/get-started.css}">
+    </th:block>
+
+</head>
+
+<body>
+
+<main layout:fragment="main-content">
+
+    <!-- ==================================================
+         HERO
+         ================================================== -->
+
+    <section class="start-hero">
+
+        <div class="start-glow start-glow-one"></div>
+        <div class="start-glow start-glow-two"></div>
+
+        <div class="container start-hero-container">
+
+            <span class="start-eyebrow">
+                START A PROJECT
+            </span>
+
+            <h1>
+                Let's build something
+                <span class="gradient-text">
+                    meaningful.
+                </span>
+            </h1>
+
+            <p>
+                Tell us about your idea, challenge or product.
+                You don't need to have everything figured out —
+                that's part of the process.
+            </p>
+
+            <a href="#project-form"
+               class="start-scroll-link">
+
+                Tell us about your project
+                <span>↓</span>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         INTRO
+         ================================================== -->
+
+    <section class="section start-intro">
+
+        <div class="container">
+
+            <div class="start-intro-grid">
+
+                <div>
+
+                    <span class="start-eyebrow">
+                        YOUR IDEA
+                    </span>
+
+                    <h2>
+                        Start with what you
+                        <span class="gradient-text">
+                            know.
+                        </span>
+                    </h2>
+
+                </div>
+
+                <div>
+
+                    <p class="start-intro-large">
+                        A project doesn't need to begin with a
+                        specification document.
+                    </p>
+
+                    <p>
+                        Tell us what you're trying to create,
+                        what problem you're solving and where
+                        you currently are in the process.
+                    </p>
+
+                    <p>
+                        We'll use that information to understand
+                        the project and determine the right
+                        next conversation.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         PROJECT FORM
+         ================================================== -->
+
+    <section class="section project-section"
+             id="project-form">
+
+        <div class="container">
+
+            <div class="project-layout">
+
+
+                <!-- ======================================
+                     LEFT
+                     ====================================== -->
+
+                <aside class="project-sidebar">
+
+                    <span class="start-eyebrow">
+                        PROJECT BRIEF
+                    </span>
+
+                    <h2>
+                        Tell us what you want to
+                        <span class="gradient-text">
+                            create.
+                        </span>
+                    </h2>
+
+                    <p>
+                        Give us as much information as you
+                        currently have. You can always fill
+                        in the details later.
+                    </p>
+
+
+                    <div class="project-sidebar-list">
+
+                        <div>
+                            <span>01</span>
+
+                            <p>
+                                Your information
+                            </p>
+                        </div>
+
+                        <div>
+                            <span>02</span>
+
+                            <p>
+                                Project direction
+                            </p>
+                        </div>
+
+                        <div>
+                            <span>03</span>
+
+                            <p>
+                                Scope & timeline
+                            </p>
+                        </div>
+
+                        <div>
+                            <span>04</span>
+
+                            <p>
+                                Project description
+                            </p>
+                        </div>
+
+                    </div>
+
+                </aside>
+
+
+                <!-- ======================================
+                     FORM
+                     ====================================== -->
+
+                <div class="project-form-wrapper">
+
+                    <div class="project-form-glow"></div>
+
+
+                    <!-- SUCCESS -->
+
+                    <div class="project-success"
+                         th:if="${projectSuccess}">
+
+                        <div class="project-success-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Project brief received.
+                            </strong>
+
+                            <p>
+                                Thank you. We've received your
+                                project information and will
+                                review it before getting back
+                                to you.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- GLOBAL ERROR -->
+
+                    <div class="project-global-error"
+                         th:if="${projectError}">
+
+                        <strong>
+                            We couldn't submit your project.
+                        </strong>
+
+                        <p th:text="${projectError}">
+                            Please try again.
+                        </p>
+
+                    </div>
+
+
+                    <form th:action="@{/get-started}"
+                          th:object="${projectForm}"
+                          method="post"
+                          class="project-form">
+
+
+                        <!-- ==================================
+                             SECTION 01
+                             ================================== -->
+
+                        <div class="form-section">
+
+                            <div class="form-section-header">
+
+                                <span>
+                                    01
+                                </span>
+
+                                <div>
+
+                                    <small>
+                                        ABOUT YOU
+                                    </small>
+
+                                    <h3>
+                                        Your information
+                                    </h3>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-grid">
+
+
+                                <div class="form-group">
+
+                                    <label for="name">
+                                        Name
+                                        <span>*</span>
+                                    </label>
+
+                                    <input id="name"
+                                           type="text"
+                                           th:field="*{name}"
+                                           th:classappend="${#fields.hasErrors('name')} ? 'input-error' : ''"
+                                           placeholder="Your name"
+                                           autocomplete="name">
+
+                                    <span class="field-error"
+                                          th:if="${#fields.hasErrors('name')}"
+                                          th:errors="*{name}">
+                                    </span>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="email">
+                                        Email
+                                        <span>*</span>
+                                    </label>
+
+                                    <input id="email"
+                                           type="email"
+                                           th:field="*{email}"
+                                           th:classappend="${#fields.hasErrors('email')} ? 'input-error' : ''"
+                                           placeholder="you@example.com"
+                                           autocomplete="email">
+
+                                    <span class="field-error"
+                                          th:if="${#fields.hasErrors('email')}"
+                                          th:errors="*{email}">
+                                    </span>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="company">
+                                        Company
+
+                                        <small>
+                                            Optional
+                                        </small>
+                                    </label>
+
+                                    <input id="company"
+                                           type="text"
+                                           th:field="*{company}"
+                                           placeholder="Company or organization"
+                                           autocomplete="organization">
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="role">
+                                        Your role
+
+                                        <small>
+                                            Optional
+                                        </small>
+                                    </label>
+
+                                    <input id="role"
+                                           type="text"
+                                           th:field="*{role}"
+                                           placeholder="Founder, Manager, etc.">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ==================================
+                             SECTION 02
+                             ================================== -->
+
+                        <div class="form-section">
+
+                            <div class="form-section-header">
+
+                                <span>
+                                    02
+                                </span>
+
+                                <div>
+
+                                    <small>
+                                        PROJECT
+                                    </small>
+
+                                    <h3>
+                                        What are we building?
+                                    </h3>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="projectName">
+                                    Project name
+
+                                    <small>
+                                        Optional
+                                    </small>
+                                </label>
+
+                                <input id="projectName"
+                                       type="text"
+                                       th:field="*{projectName}"
+                                       placeholder="Your project or product name">
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Project type
+                                    <span>*</span>
+                                </label>
+
+
+                                <div class="option-grid">
+
+                                    <label class="option-card">
+
+                                        <input type="radio"
+                                               th:field="*{projectType}"
+                                               value="NEW_PRODUCT">
+
+                                        <span class="option-content">
+
+                                            <strong>
+                                                New Product
+                                            </strong>
+
+                                            <small>
+                                                Build a digital product
+                                                from the beginning.
+                                            </small>
+
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="option-card">
+
+                                        <input type="radio"
+                                               th:field="*{projectType}"
+                                               value="EXISTING_PRODUCT">
+
+                                        <span class="option-content">
+
+                                            <strong>
+                                                Existing Product
+                                            </strong>
+
+                                            <small>
+                                                Improve or expand an
+                                                existing platform.
+                                            </small>
+
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="option-card">
+
+                                        <input type="radio"
+                                               th:field="*{projectType}"
+                                               value="BUSINESS_SYSTEM">
+
+                                        <span class="option-content">
+
+                                            <strong>
+                                                Business System
+                                            </strong>
+
+                                            <small>
+                                                Build software around
+                                                a business process.
+                                            </small>
+
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="option-card">
+
+                                        <input type="radio"
+                                               th:field="*{projectType}"
+                                               value="NOT_SURE">
+
+                                        <span class="option-content">
+
+                                            <strong>
+                                                Not Sure Yet
+                                            </strong>
+
+                                            <small>
+                                                Start with the idea and
+                                                define it together.
+                                            </small>
+
+                                        </span>
+
+                                    </label>
+
+                                </div>
+
+
+                                <span class="field-error"
+                                      th:if="${#fields.hasErrors('projectType')}"
+                                      th:errors="*{projectType}">
+                                </span>
+
+                            </div>
+
+
+                            <!-- SERVICES -->
+
+                            <div class="form-group">
+
+                                <label>
+                                    What might you need?
+
+                                    <small>
+                                        Select all that apply
+                                    </small>
+                                </label>
+
+
+                                <div class="service-grid">
+
+
+                                    <label class="service-option">
+
+                                        <input type="checkbox"
+                                               th:field="*{services}"
+                                               value="WEB">
+
+                                        <span>
+                                            Web Platform
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="service-option">
+
+                                        <input type="checkbox"
+                                               th:field="*{services}"
+                                               value="MOBILE">
+
+                                        <span>
+                                            Mobile Application
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="service-option">
+
+                                        <input type="checkbox"
+                                               th:field="*{services}"
+                                               value="AI">
+
+                                        <span>
+                                            AI / Intelligence
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="service-option">
+
+                                        <input type="checkbox"
+                                               th:field="*{services}"
+                                               value="BACKEND">
+
+                                        <span>
+                                            Backend / APIs
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="service-option">
+
+                                        <input type="checkbox"
+                                               th:field="*{services}"
+                                               value="CLOUD">
+
+                                        <span>
+                                            Cloud / Infrastructure
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="service-option">
+
+                                        <input type="checkbox"
+                                               th:field="*{services}"
+                                               value="CONSULTING">
+
+                                        <span>
+                                            Product / Technical Direction
+                                        </span>
+
+                                    </label>
+
+
+                                    <label class="service-option">
+
+                                        <input type="checkbox"
+                                               th:field="*{services}"
+                                               value="NOT_SURE">
+
+                                        <span>
+                                            Not Sure Yet
+                                        </span>
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- STAGE -->
+
+                            <div class="form-group">
+
+                                <label for="stage">
+                                    Current stage
+                                    <span>*</span>
+                                </label>
+
+                                <select id="stage"
+                                        th:field="*{stage}"
+                                        th:classappend="${#fields.hasErrors('stage')} ? 'input-error' : ''">
+
+                                    <option value="">
+                                        Select current stage
+                                    </option>
+
+                                    <option value="IDEA">
+                                        Idea
+                                    </option>
+
+                                    <option value="PLANNING">
+                                        Planning / Research
+                                    </option>
+
+                                    <option value="DESIGN">
+                                        Design / Prototype
+                                    </option>
+
+                                    <option value="DEVELOPMENT">
+                                        Already in development
+                                    </option>
+
+                                    <option value="LIVE">
+                                        Existing live product
+                                    </option>
+
+                                </select>
+
+                                <span class="field-error"
+                                      th:if="${#fields.hasErrors('stage')}"
+                                      th:errors="*{stage}">
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ==================================
+                             SECTION 03
+                             ================================== -->
+
+                        <div class="form-section">
+
+                            <div class="form-section-header">
+
+                                <span>
+                                    03
+                                </span>
+
+                                <div>
+
+                                    <small>
+                                        SCOPE
+                                    </small>
+
+                                    <h3>
+                                        Timeline & investment
+                                    </h3>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-grid">
+
+
+                                <div class="form-group">
+
+                                    <label for="timeline">
+                                        Target timeline
+                                        <span>*</span>
+                                    </label>
+
+                                    <select id="timeline"
+                                            th:field="*{timeline}"
+                                            th:classappend="${#fields.hasErrors('timeline')} ? 'input-error' : ''">
+
+                                        <option value="">
+                                            Select timeline
+                                        </option>
+
+                                        <option value="ASAP">
+                                            As soon as possible
+                                        </option>
+
+                                        <option value="1_3_MONTHS">
+                                            1–3 months
+                                        </option>
+
+                                        <option value="3_6_MONTHS">
+                                            3–6 months
+                                        </option>
+
+                                        <option value="6_PLUS_MONTHS">
+                                            6+ months
+                                        </option>
+
+                                        <option value="FLEXIBLE">
+                                            Flexible / Not sure
+                                        </option>
+
+                                    </select>
+
+                                    <span class="field-error"
+                                          th:if="${#fields.hasErrors('timeline')}"
+                                          th:errors="*{timeline}">
+                                    </span>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="budget">
+                                        Estimated budget
+
+                                        <small>
+                                            Optional
+                                        </small>
+                                    </label>
+
+                                    <select id="budget"
+                                            th:field="*{budget}">
+
+                                        <option value="">
+                                            Select range
+                                        </option>
+
+                                        <option value="DISCUSS">
+                                            Let's discuss
+                                        </option>
+
+                                        <option value="UNDER_5K">
+                                            Under €5,000
+                                        </option>
+
+                                        <option value="5K_15K">
+                                            €5,000 – €15,000
+                                        </option>
+
+                                        <option value="15K_30K">
+                                            €15,000 – €30,000
+                                        </option>
+
+                                        <option value="30K_50K">
+                                            €30,000 – €50,000
+                                        </option>
+
+                                        <option value="50K_PLUS">
+                                            €50,000+
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ==================================
+                             SECTION 04
+                             ================================== -->
+
+                        <div class="form-section">
+
+                            <div class="form-section-header">
+
+                                <span>
+                                    04
+                                </span>
+
+                                <div>
+
+                                    <small>
+                                        THE IDEA
+                                    </small>
+
+                                    <h3>
+                                        Tell us about it
+                                    </h3>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="description">
+                                    Project description
+                                    <span>*</span>
+                                </label>
+
+                                <textarea id="description"
+                                          th:field="*{description}"
+                                          th:classappend="${#fields.hasErrors('description')} ? 'input-error' : ''"
+                                          rows="9"
+                                          maxlength="8000"
+                                          placeholder="What are you trying to create? What problem does it solve? Who is it for?"></textarea>
+
+                                <div class="textarea-footer">
+
+                                    <span class="field-error"
+                                          th:if="${#fields.hasErrors('description')}"
+                                          th:errors="*{description}">
+                                    </span>
+
+                                    <span>
+                                        Max 8000 characters
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="reference">
+                                    Reference / existing website
+
+                                    <small>
+                                        Optional
+                                    </small>
+                                </label>
+
+                                <input id="reference"
+                                       type="text"
+                                       th:field="*{reference}"
+                                       placeholder="Website, product or reference URL">
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ==================================
+                             PRIVACY
+                             ================================== -->
+
+                        <div class="project-privacy">
+
+                            <label>
+
+                                <input type="checkbox"
+                                       th:field="*{privacyAccepted}">
+
+                                <span class="project-checkbox"></span>
+
+                                <span class="project-privacy-text">
+
+                                    I agree that geromAI may use
+                                    the information provided to
+                                    review and respond to this
+                                    project enquiry.
+
+                                    <strong>*</strong>
+
+                                </span>
+
+                            </label>
+
+
+                            <span class="field-error"
+                                  th:if="${#fields.hasErrors('privacyAccepted')}"
+                                  th:errors="*{privacyAccepted}">
+                            </span>
+
+                        </div>
+
+
+                        <!-- ==================================
+                             SUBMIT
+                             ================================== -->
+
+                        <div class="project-submit-area">
+
+                            <button type="submit"
+                                    class="project-submit">
+
+                                <span>
+                                    Submit Project
+                                </span>
+
+                                <span>
+                                    →
+                                </span>
+
+                            </button>
+
+
+                            <p>
+                                We'll only use this information
+                                to evaluate and respond to your
+                                enquiry.
+                            </p>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         WHAT HAPPENS NEXT
+         ================================================== -->
+
+    <section class="section next-section">
+
+        <div class="container">
+
+            <div class="next-heading">
+
+                <span class="start-eyebrow">
+                    WHAT HAPPENS NEXT
+                </span>
+
+                <h2>
+                    From submission to
+                    <span class="gradient-text">
+                        conversation.
+                    </span>
+                </h2>
+
+            </div>
+
+
+            <div class="next-grid">
+
+
+                <article class="next-card">
+
+                    <span>
+                        01
+                    </span>
+
+                    <h3>
+                        We review
+                    </h3>
+
+                    <p>
+                        We look through your project brief
+                        and understand the idea, requirements
+                        and current stage.
+                    </p>
+
+                </article>
+
+
+                <article class="next-card">
+
+                    <span>
+                        02
+                    </span>
+
+                    <h3>
+                        We connect
+                    </h3>
+
+                    <p>
+                        If the project is a good fit, we get
+                        in touch to discuss the idea in more
+                        detail.
+                    </p>
+
+                </article>
+
+
+                <article class="next-card">
+
+                    <span>
+                        03
+                    </span>
+
+                    <h3>
+                        We define
+                    </h3>
+
+                    <p>
+                        Together we clarify scope, technical
+                        direction, priorities and the next
+                        steps.
+                    </p>
+
+                </article>
+
+
+                <article class="next-card">
+
+                    <span>
+                        04
+                    </span>
+
+                    <h3>
+                        We build
+                    </h3>
+
+                    <p>
+                        Once the direction is clear, the idea
+                        can move from concept into technology.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         SIMPLE CONTACT
+         ================================================== -->
+
+    <section class="section simple-contact-section">
+
+        <div class="container">
+
+            <div class="simple-contact">
+
+                <div>
+
+                    <span class="start-eyebrow">
+                        NOT A PROJECT?
+                    </span>
+
+                    <h2>
+                        Just want to talk?
+                    </h2>
+
+                    <p>
+                        Use the general contact form instead.
+                    </p>
+
+                </div>
+
+
+                <a class="btn-secondary"
+                   th:href="@{/contact}">
+
+                    Contact geromAI
+
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+</body>
+</html>

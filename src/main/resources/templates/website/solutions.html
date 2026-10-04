@@ -1,8 +1,513 @@
 <!DOCTYPE html>
-<html th:lang="${#locale.language}"  xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{Layouts/website-layout}">
+<html layout:decorate="~{layout/base}" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Solutions</title>
+    <th:block layout:fragment="page-css">
+        <link rel="stylesheet" th:href="@{/css/solutions.css}">
+    </th:block>
+</head>
+<body>
 <main layout:fragment="main-content">
-    <h1>Solutions</h1>
+    <!-- ==================================================
+         HERO
+         ================================================== -->
+    <section class="solutions-hero">
+        <div class="solutions-hero-glow glow-one"></div>
+        <div class="solutions-hero-glow glow-two"></div>
+        <div class="container solutions-hero-container">
+            <div class="solutions-hero-content">
+
+                <span class="solutions-eyebrow">
+                    geromAI SOLUTIONS
+                </span>
+                <h1>
+                    Technology shaped around
+                    <span class="gradient-text">
+                        your idea.
+                    </span>
+                </h1>
+                <p>
+                    From the first concept to a scalable digital
+                    product, geromAI combines software engineering,
+                    product thinking and intelligent technology
+                    to build modern digital experiences. </p>
+                <div class="solutions-hero-actions">
+                    <a class="btn-primary" th:href="@{/get-started}">
+                        Start a Project
+                        <span>→</span>
+                    </a>
+                    <a class="btn-secondary" href="#capabilities">
+                        Explore Solutions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================================================
+         INTRO
+         ================================================== -->
+    <section class="section solutions-intro">
+        <div class="container">
+            <div class="solutions-intro-grid">
+                <div>
+
+                    <span class="solutions-eyebrow">
+                        WHAT WE DO
+                    </span>
+                    <h2>
+                        From concept to
+                        <span class="gradient-text">
+                            digital reality.
+                        </span>
+                    </h2>
+                </div>
+                <div class="solutions-intro-text">
+                    <p>
+                        Every product begins differently.
+                        Some start as an idea. Others begin
+                        with an existing system that needs
+                        to evolve. </p>
+                    <p>
+                        geromAI approaches technology as a
+                        complete system — combining user
+                        experience, software architecture,
+                        data and intelligent functionality
+                        into one coherent product. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================================================
+         CAPABILITIES
+         ================================================== -->
+    <section class="section capabilities-section" id="capabilities">
+        <div class="container">
+            <div class="capabilities-heading">
+
+                <span class="solutions-eyebrow">
+                    CAPABILITIES
+                </span>
+                <h2>
+                    What we can
+                    <span class="gradient-text">
+                        build.
+                    </span>
+                </h2>
+            </div>
+            <div class="solutions-list">
+                <!-- ======================================
+                     WEB
+                     ====================================== -->
+                <article class="solution-block">
+                    <div class="solution-number">
+                        01
+                    </div>
+                    <div class="solution-main">
+
+                        <span class="solution-category">
+                            WEB
+                        </span>
+                        <h3>
+                            Web Platforms </h3>
+                        <p>
+                            Modern web applications designed
+                            around performance, scalability,
+                            usability and long-term growth. </p>
+                    </div>
+                    <div class="solution-technologies">
+                        <span>Web Applications</span>
+                        <span>SaaS Platforms</span>
+                        <span>Responsive Interfaces</span>
+                        <span>Dashboards</span>
+                        <span>APIs</span>
+                        <span>Authentication</span>
+                    </div>
+                </article>
+                <!-- ======================================
+                     MOBILE
+                     ====================================== -->
+                <article class="solution-block">
+                    <div class="solution-number">
+                        02
+                    </div>
+                    <div class="solution-main">
+
+                        <span class="solution-category">
+                            MOBILE
+                        </span>
+                        <h3>
+                            Mobile Experiences </h3>
+                        <p>
+                            Mobile products that extend digital
+                            platforms into experiences designed
+                            around people, movement and
+                            accessibility. </p>
+                    </div>
+                    <div class="solution-technologies">
+                        <span>Mobile Applications</span>
+                        <span>Connected Experiences</span>
+                        <span>API Integration</span>
+                        <span>Notifications</span>
+                        <span>User Accounts</span>
+                        <span>Cross-Platform Systems</span>
+                    </div>
+                </article>
+                <!-- ======================================
+                     AI
+                     ====================================== -->
+                <article class="solution-block solution-block-featured">
+                    <div class="solution-number">
+                        03
+                    </div>
+                    <div class="solution-main">
+
+                        <span class="solution-category">
+                            INTELLIGENCE
+                        </span>
+                        <h3>
+                            AI & Intelligent Systems </h3>
+                        <p>
+                            Artificial intelligence integrated
+                            where it can improve discovery,
+                            automation, understanding and the
+                            overall product experience. </p>
+                    </div>
+                    <div class="solution-technologies">
+                        <span>AI Integration</span>
+                        <span>Intelligent Search</span>
+                        <span>Recommendations</span>
+                        <span>Automation</span>
+                        <span>Data Intelligence</span>
+                        <span>AI Assistants</span>
+                    </div>
+                </article>
+                <!-- ======================================
+                     BACKEND
+                     ====================================== -->
+                <article class="solution-block">
+                    <div class="solution-number">
+                        04
+                    </div>
+                    <div class="solution-main">
+
+                        <span class="solution-category">
+                            INFRASTRUCTURE
+                        </span>
+                        <h3>
+                            Backend & Cloud Systems </h3>
+                        <p>
+                            Reliable backend architecture built
+                            to support secure applications,
+                            integrations, data and growing
+                            digital products. </p>
+                    </div>
+                    <div class="solution-technologies">
+                        <span>Java</span>
+                        <span>Spring Boot</span>
+                        <span>REST APIs</span>
+                        <span>Databases</span>
+                        <span>Cloud Infrastructure</span>
+                        <span>Security</span>
+                    </div>
+                </article>
+                <!-- ======================================
+                     CUSTOM
+                     ====================================== -->
+                <article class="solution-block">
+                    <div class="solution-number">
+                        05
+                    </div>
+                    <div class="solution-main">
+
+                        <span class="solution-category">
+                            CUSTOM
+                        </span>
+                        <h3>
+                            Custom Software </h3>
+                        <p>
+                            Technology designed around a
+                            specific problem instead of forcing
+                            an idea into an existing template. </p>
+                    </div>
+                    <div class="solution-technologies">
+                        <span>Custom Platforms</span>
+                        <span>Internal Tools</span>
+                        <span>Integrations</span>
+                        <span>Business Systems</span>
+                        <span>Automation</span>
+                        <span>Product Development</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    <!-- ==================================================
+         DEVELOPMENT APPROACH
+         ================================================== -->
+    <section class="section process-section">
+        <div class="container">
+            <div class="process-heading">
+
+                <span class="solutions-eyebrow">
+                    HOW WE BUILD
+                </span>
+                <h2>
+                    From idea to
+                    <span class="gradient-text">
+                        evolution.
+                    </span>
+                </h2>
+                <p>
+                    A structured path from understanding the
+                    idea to building, launching and evolving
+                    the product. </p>
+            </div>
+            <div class="process-track">
+                <article class="process-step">
+                    <div class="process-top">
+
+                        <span class="process-number">
+                            01
+                        </span>
+                        <span class="process-dot"></span>
+                    </div>
+                    <h3>
+                        Discover </h3>
+                    <p>
+                        Understand the problem, audience,
+                        opportunity and goals behind the idea. </p>
+                </article>
+                <article class="process-step">
+                    <div class="process-top">
+
+                        <span class="process-number">
+                            02
+                        </span>
+                        <span class="process-dot"></span>
+                    </div>
+                    <h3>
+                        Define </h3>
+                    <p>
+                        Shape the product, functionality,
+                        technical architecture and development
+                        direction. </p>
+                </article>
+                <article class="process-step">
+                    <div class="process-top">
+
+                        <span class="process-number">
+                            03
+                        </span>
+                        <span class="process-dot"></span>
+                    </div>
+                    <h3>
+                        Build </h3>
+                    <p>
+                        Transform the concept into a working,
+                        secure and scalable digital product. </p>
+                </article>
+                <article class="process-step">
+                    <div class="process-top">
+
+                        <span class="process-number">
+                            04
+                        </span>
+                        <span class="process-dot"></span>
+                    </div>
+                    <h3>
+                        Launch </h3>
+                    <p>
+                        Prepare the product for real users,
+                        production environments and the world. </p>
+                </article>
+                <article class="process-step">
+                    <div class="process-top">
+
+                        <span class="process-number">
+                            05
+                        </span>
+                        <span class="process-dot"></span>
+                    </div>
+                    <h3>
+                        Evolve </h3>
+                    <p>
+                        Learn from usage, improve the
+                        experience and expand the technology
+                        as the product grows. </p>
+                </article>
+            </div>
+        </div>
+    </section>
+    <!-- ==================================================
+         TECHNOLOGY
+         ================================================== -->
+    <section class="section technology-section">
+        <div class="container">
+            <div class="technology-panel">
+                <div class="technology-glow"></div>
+                <div class="technology-heading">
+
+                    <span class="solutions-eyebrow">
+                        TECHNOLOGY
+                    </span>
+                    <h2>
+                        Built on a
+                        <span class="gradient-text">
+                            strong foundation.
+                        </span>
+                    </h2>
+                    <p>
+                        Technology choices should serve the
+                        product — not the other way around. </p>
+                </div>
+                <div class="technology-grid">
+                    <div class="technology-item">
+
+                        <span class="technology-label">
+                            BACKEND
+                        </span>
+                        <strong>
+                            Java
+                        </strong>
+                    </div>
+                    <div class="technology-item">
+
+                        <span class="technology-label">
+                            FRAMEWORK
+                        </span>
+                        <strong>
+                            Spring Boot
+                        </strong>
+                    </div>
+                    <div class="technology-item">
+
+                        <span class="technology-label">
+                            FRONTEND
+                        </span>
+                        <strong>
+                            Modern Web
+                        </strong>
+                    </div>
+                    <div class="technology-item">
+
+                        <span class="technology-label">
+                            DATA
+                        </span>
+                        <strong>
+                            SQL / APIs
+                        </strong>
+                    </div>
+                    <div class="technology-item">
+
+                        <span class="technology-label">
+                            INTELLIGENCE
+                        </span>
+                        <strong>
+                            AI
+                        </strong>
+                    </div>
+                    <div class="technology-item">
+
+                        <span class="technology-label">
+                            INFRASTRUCTURE
+                        </span>
+                        <strong>
+                            Cloud
+                        </strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================================================
+         PRINCIPLES
+         ================================================== -->
+    <section class="section engineering-section">
+        <div class="container">
+            <div class="engineering-heading">
+
+                <span class="solutions-eyebrow">
+                    ENGINEERING PRINCIPLES
+                </span>
+                <h2>
+                    Designed for more than
+                    <span class="gradient-text">
+                        launch day.
+                    </span>
+                </h2>
+            </div>
+            <div class="engineering-grid">
+                <article class="engineering-card">
+                    <span>01</span>
+                    <h3>
+                        Scalable </h3>
+                    <p>
+                        Architecture designed to evolve as
+                        products, users and requirements grow. </p>
+                </article>
+                <article class="engineering-card">
+                    <span>02</span>
+                    <h3>
+                        Secure </h3>
+                    <p>
+                        Security considered throughout the
+                        product architecture and development
+                        lifecycle. </p>
+                </article>
+                <article class="engineering-card">
+                    <span>03</span>
+                    <h3>
+                        Maintainable </h3>
+                    <p>
+                        Clear systems and code designed to
+                        remain understandable as technology
+                        evolves. </p>
+                </article>
+                <article class="engineering-card">
+                    <span>04</span>
+                    <h3>
+                        Human </h3>
+                    <p>
+                        Technology built around the people
+                        who will actually use it. </p>
+                </article>
+            </div>
+        </div>
+    </section>
+    <!-- ==================================================
+         CTA
+         ================================================== -->
+    <section class="section solutions-cta">
+        <div class="container">
+            <div class="solutions-cta-panel">
+                <div class="solutions-cta-glow"></div>
+                <span class="solutions-eyebrow">
+                    HAVE A PROJECT?
+                </span>
+                <h2>
+                    Bring us the idea.
+                    <br>
+                    We'll help shape the
+                    <span class="gradient-text">
+                        technology.
+                    </span>
+                </h2>
+                <p>
+                    Tell us what you want to create and
+                    where you want it to go. </p>
+                <div class="solutions-cta-actions">
+                    <a class="btn-primary" th:href="@{/get-started}">
+                        Start a Project
+                        <span>→</span>
+                    </a>
+                    <a class="btn-secondary" th:href="@{/contact}">
+                        Contact geromAI
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
+</body>
 </html>

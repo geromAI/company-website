@@ -16,7 +16,7 @@
     position: absolute;
     right: 0;
     min-width: 50px;
-    background: var(--color-electricBlue);
+    background: var(--gradient-brand);
     border-radius: 8px;
     padding: 5px;
     opacity: 0;
@@ -38,8 +38,11 @@
 }
 
 .language-options a:hover {
-    background-color: var(--color-softIceBlue);
-    cursor: pointer;
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow-brand);
+
+    filter: brightness(1.08);
 }
 
 .language-selector:hover .language-options {

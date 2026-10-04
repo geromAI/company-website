@@ -1,0 +1,981 @@
+/* ==========================================================
+   geromAI HOME
+   ========================================================== */
+
+
+/* ==========================================================
+   HERO
+   ========================================================== */
+
+.home-hero {
+    position: relative;
+
+    min-height: calc(100vh - var(--header-height));
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    isolation: isolate;
+}
+
+
+.home-hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+            linear-gradient(
+                    rgba(255,255,255,.018) 1px,
+                    transparent 1px
+            ),
+            linear-gradient(
+                    90deg,
+                    rgba(255,255,255,.018) 1px,
+                    transparent 1px
+            );
+
+    background-size: 80px 80px;
+
+    mask-image:
+            linear-gradient(
+                    to bottom,
+                    rgba(0,0,0,.7),
+                    transparent
+            );
+
+    pointer-events: none;
+
+    z-index: -2;
+}
+
+
+.hero-container {
+    min-height: 700px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.1fr)
+        minmax(400px, .9fr);
+
+    align-items: center;
+
+    gap: 70px;
+
+    position: relative;
+}
+
+
+.hero-content {
+    position: relative;
+
+    z-index: 5;
+}
+
+
+.hero-badge {
+    width: fit-content;
+
+    margin-bottom: 30px;
+
+    padding: 9px 14px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    border:
+            1px solid rgba(99,230,255,.15);
+
+    border-radius: 100px;
+
+    background:
+            rgba(20,107,255,.06);
+
+    color:
+            var(--color-textSecondary);
+
+    font-size: .78rem;
+
+    font-weight: 600;
+
+    letter-spacing: .08em;
+
+    text-transform: uppercase;
+}
+
+
+.hero-badge-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background:
+            var(--color-cyan);
+
+    box-shadow:
+            0 0 12px var(--color-cyan);
+}
+
+
+.home-hero h1 {
+    max-width: 850px;
+
+    margin-bottom: 30px;
+
+    font-size:
+            clamp(4rem, 7vw, 7.3rem);
+}
+
+
+.hero-description {
+    max-width: 650px;
+
+    margin-bottom: 40px;
+
+    font-size:
+            clamp(1rem, 1.5vw, 1.2rem);
+
+    line-height: 1.8;
+}
+
+
+.hero-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    flex-wrap: wrap;
+}
+
+
+.hero-primary {
+    min-width: 155px;
+}
+
+
+/* ==========================================================
+   HERO G
+   ========================================================== */
+
+.hero-visual {
+    position: relative;
+
+    min-height: 550px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.hero-g {
+    position: relative;
+
+    width: min(100%, 520px);
+
+    z-index: 2;
+
+    filter:
+            drop-shadow(
+                    0 35px 60px
+                    rgba(0,140,255,.20)
+            );
+}
+
+
+.hero-logo-glow {
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    background:
+            radial-gradient(
+                    circle,
+                    rgba(0,140,255,.20),
+                    rgba(100,59,255,.08) 40%,
+                    transparent 70%
+            );
+
+    filter: blur(20px);
+
+    z-index: 0;
+}
+
+
+.hero-background-glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(130px);
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+.hero-glow-one {
+    width: 500px;
+    height: 500px;
+
+    right: -150px;
+    top: 5%;
+
+    background:
+            rgba(0,140,255,.14);
+}
+
+
+.hero-glow-two {
+    width: 400px;
+    height: 400px;
+
+    left: -250px;
+    bottom: -100px;
+
+    background:
+            rgba(100,59,255,.10);
+}
+
+
+.hero-scroll {
+    position: absolute;
+
+    left: 50%;
+    bottom: 25px;
+
+    transform:
+            translateX(-50%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color:
+            var(--color-muted);
+
+    font-size: .7rem;
+
+    letter-spacing: .2em;
+
+    text-transform: uppercase;
+}
+
+
+.hero-scroll-line {
+    width: 1px;
+    height: 35px;
+
+    background:
+            linear-gradient(
+                    var(--color-cyan),
+                    transparent
+            );
+}
+
+
+/* ==========================================================
+   COMMON SECTION HEADING
+   ========================================================== */
+
+.section-heading {
+    max-width: 780px;
+
+    margin-bottom: 60px;
+}
+
+
+.section-heading h2 {
+    margin-bottom: 22px;
+}
+
+
+.section-heading > p {
+    max-width: 680px;
+
+    font-size: 1.08rem;
+}
+
+
+.section-eyebrow {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color:
+            var(--color-cyan);
+
+    font-size: .75rem;
+
+    font-weight: 700;
+
+    letter-spacing: .18em;
+
+    text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   CAPABILITIES
+   ========================================================== */
+
+.home-intro {
+    background:
+            rgba(2,8,23,.25);
+}
+
+
+.capabilities-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.capability-card {
+    min-height: 280px;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.capability-number {
+    margin-bottom: auto;
+
+    color:
+            var(--color-cyan);
+
+    font-size: .75rem;
+
+    font-weight: 700;
+
+    letter-spacing: .15em;
+}
+
+
+.capability-card h3 {
+    margin-top: 70px;
+}
+
+
+.capability-card p {
+    margin-bottom: 0;
+}
+
+
+/* ==========================================================
+   FEATURED PRODUCT
+   ========================================================== */
+
+.featured-product {
+    position: relative;
+}
+
+
+.product-panel {
+    position: relative;
+
+    min-height: 600px;
+
+    padding: 70px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    align-items: center;
+
+    gap: 70px;
+
+    overflow: hidden;
+
+    border:
+            1px solid var(--color-border);
+
+    border-radius:
+            var(--radius-large);
+
+    background:
+            linear-gradient(
+                    135deg,
+                    rgba(11,23,48,.9),
+                    rgba(2,8,23,.9)
+            );
+
+    box-shadow:
+            0 30px 100px
+            rgba(0,0,0,.25);
+}
+
+
+.product-panel::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: -200px;
+    top: -200px;
+
+    border-radius: 50%;
+
+    background:
+            rgba(0,140,255,.13);
+
+    filter:
+            blur(80px);
+}
+
+
+.product-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.product-status {
+    width: fit-content;
+
+    margin-bottom: 25px;
+
+    padding: 7px 11px;
+
+    border:
+            1px solid rgba(0,217,255,.18);
+
+    border-radius: 100px;
+
+    color:
+            var(--color-lightCyan);
+
+    background:
+            rgba(0,217,255,.06);
+
+    font-size: .68rem;
+
+    font-weight: 700;
+
+    letter-spacing: .12em;
+}
+
+
+.product-content h2 {
+    margin-bottom: 12px;
+
+    font-size:
+            clamp(3rem,5vw,5rem);
+}
+
+
+.product-tagline {
+    color:
+            var(--color-softIceBlue);
+
+    font-size: 1.25rem;
+
+    font-weight: 500;
+}
+
+
+.product-description {
+    max-width: 600px;
+
+    margin:
+            25px 0 35px;
+}
+
+
+.product-link,
+.section-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color:
+            var(--color-lightCyan);
+
+    font-weight: 600;
+}
+
+
+.product-link:hover,
+.section-link:hover {
+    color:
+            var(--color-pureWhite);
+}
+
+
+/* ==========================================================
+   ATHLOCOSMOS PLANET
+   ========================================================== */
+
+.product-visual {
+    min-height: 420px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.planet {
+    position: relative;
+
+    width: 300px;
+    height: 300px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.planet-core {
+    width: 190px;
+    height: 190px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+            1px solid rgba(99,230,255,.25);
+
+    border-radius: 50%;
+
+    background:
+            radial-gradient(
+                    circle at 35% 30%,
+                    #146BFF,
+                    #07152D 65%
+            );
+
+    color: white;
+
+    font-size: 2.5rem;
+
+    font-weight: 700;
+
+    box-shadow:
+            0 0 80px
+            rgba(0,140,255,.25);
+
+    z-index: 5;
+}
+
+
+.orbit {
+    position: absolute;
+
+    border:
+            1px solid rgba(99,230,255,.18);
+
+    border-radius: 50%;
+}
+
+
+.orbit-one {
+    inset: 20px;
+
+    transform:
+            rotate(20deg)
+            scaleY(.55);
+}
+
+
+.orbit-two {
+    inset: 0;
+
+    transform:
+            rotate(-30deg)
+            scaleY(.65);
+}
+
+
+.orbit-three {
+    inset: -25px;
+
+    transform:
+            rotate(65deg)
+            scaleY(.55);
+}
+
+
+/* ==========================================================
+   SOLUTIONS
+   ========================================================== */
+
+.section-heading-row {
+    max-width: none;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 40px;
+}
+
+
+.solutions-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    border-top:
+            1px solid var(--color-border);
+
+    border-left:
+            1px solid var(--color-border);
+}
+
+
+.solution-card {
+    min-height: 320px;
+
+    padding: 35px;
+
+    border-right:
+            1px solid var(--color-border);
+
+    border-bottom:
+            1px solid var(--color-border);
+
+    background:
+            rgba(11,23,48,.18);
+
+    transition:
+            background var(--transition-normal);
+}
+
+
+.solution-card:hover {
+    background:
+            rgba(11,23,48,.55);
+}
+
+
+.solution-icon {
+    margin-bottom: 100px;
+
+    color:
+            var(--color-cyan);
+
+    font-size: .75rem;
+
+    font-weight: 700;
+}
+
+
+.solution-card p {
+    margin-bottom: 0;
+}
+
+
+/* ==========================================================
+   PHILOSOPHY
+   ========================================================== */
+
+.philosophy-section {
+    padding-top: 140px;
+    padding-bottom: 140px;
+}
+
+
+.philosophy-container {
+    text-align: center;
+}
+
+
+.philosophy-label {
+    display: block;
+
+    margin-bottom: 35px;
+
+    color:
+            var(--color-muted);
+
+    font-size: .7rem;
+
+    font-weight: 700;
+
+    letter-spacing: .2em;
+}
+
+
+.philosophy-text {
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    color:
+            var(--color-softIceBlue);
+
+    font-size:
+            clamp(2.2rem,4.5vw,4.5rem);
+
+    font-weight: 600;
+
+    line-height: 1.18;
+
+    letter-spacing: -.04em;
+}
+
+
+.philosophy-text span {
+    color:
+            var(--color-cyan);
+}
+
+
+/* ==========================================================
+   FINAL CTA
+   ========================================================== */
+
+.final-cta {
+    padding-top: 50px;
+}
+
+
+.final-cta-panel {
+    position: relative;
+
+    padding:
+            100px 40px;
+
+    overflow: hidden;
+
+    border:
+            1px solid var(--color-border);
+
+    border-radius:
+            var(--radius-large);
+
+    background:
+            linear-gradient(
+                    135deg,
+                    rgba(11,23,48,.75),
+                    rgba(2,8,23,.95)
+            );
+
+    text-align: center;
+}
+
+
+.final-cta-panel h2 {
+    max-width: 850px;
+
+    margin:
+            0 auto 20px;
+}
+
+
+.final-cta-panel p {
+    margin-bottom: 35px;
+
+    font-size: 1.1rem;
+}
+
+
+.final-cta-button {
+    min-width: 180px;
+}
+
+
+.cta-glow {
+    position: absolute;
+
+    width: 500px;
+    height: 250px;
+
+    left: 50%;
+    top: -170px;
+
+    transform:
+            translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+            rgba(0,140,255,.18);
+
+    filter:
+            blur(80px);
+
+    pointer-events: none;
+}
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 1000px) {
+
+    .hero-container {
+        grid-template-columns: 1fr;
+
+        padding-top: 80px;
+        padding-bottom: 100px;
+    }
+
+
+    .hero-visual {
+        display: none;
+    }
+
+
+    .capabilities-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .product-panel {
+        grid-template-columns: 1fr;
+
+        padding: 50px;
+    }
+
+
+    .solutions-grid {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 700px) {
+
+    .home-hero {
+        min-height:
+                calc(100svh - var(--header-height));
+    }
+
+
+    .hero-container {
+        min-height: auto;
+
+        gap: 20px;
+
+        padding-top: 70px;
+        padding-bottom: 100px;
+    }
+
+
+    .home-hero h1 {
+        font-size:
+                clamp(3rem,15vw,5rem);
+    }
+
+
+    .hero-actions {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+
+    .hero-actions .btn-primary,
+    .hero-actions .btn-secondary {
+        width: 100%;
+    }
+
+
+    .hero-scroll {
+        display: none;
+    }
+
+
+    .section-heading {
+        margin-bottom: 40px;
+    }
+
+
+    .product-panel {
+        min-height: auto;
+
+        padding: 35px 25px;
+
+        gap: 20px;
+    }
+
+
+    .product-visual {
+        min-height: 330px;
+
+        transform: scale(.8);
+    }
+
+
+    .section-heading-row {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .solutions-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .solution-card {
+        min-height: 240px;
+    }
+
+
+    .solution-icon {
+        margin-bottom: 60px;
+    }
+
+
+    .philosophy-section {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+
+    .final-cta-panel {
+        padding:
+                70px 20px;
+    }
+
+}

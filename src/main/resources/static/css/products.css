@@ -1,0 +1,1011 @@
+/* ==========================================================
+   geromAI — PRODUCTS
+   ========================================================== */
+
+
+/* ==========================================================
+   COMMON
+   ========================================================== */
+
+.products-eyebrow {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: var(--color-cyan);
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   HERO
+   ========================================================== */
+
+.products-hero {
+    position: relative;
+
+    min-height: 600px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    border-bottom:
+            1px solid var(--color-border);
+
+    isolation: isolate;
+}
+
+
+.products-hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+            linear-gradient(
+                    rgba(255,255,255,.018) 1px,
+                    transparent 1px
+            ),
+            linear-gradient(
+                    90deg,
+                    rgba(255,255,255,.018) 1px,
+                    transparent 1px
+            );
+
+    background-size: 80px 80px;
+
+    mask-image:
+            linear-gradient(
+                    to bottom,
+                    rgba(0,0,0,.8),
+                    transparent
+            );
+
+    z-index: -2;
+}
+
+
+.products-hero-container {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.products-hero h1 {
+    max-width: 1000px;
+
+    margin-bottom: 30px;
+}
+
+
+.products-hero p {
+    max-width: 650px;
+
+    margin-bottom: 0;
+
+    font-size: 1.15rem;
+
+    line-height: 1.8;
+}
+
+
+.products-glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(120px);
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+.products-glow-one {
+    width: 500px;
+    height: 500px;
+
+    right: -180px;
+    top: -150px;
+
+    background:
+            rgba(0, 140, 255, .16);
+}
+
+
+.products-glow-two {
+    width: 400px;
+    height: 400px;
+
+    left: -200px;
+    bottom: -250px;
+
+    background:
+            rgba(100, 59, 255, .10);
+}
+
+
+/* ==========================================================
+   INTRO
+   ========================================================== */
+
+.product-introduction {
+    border-bottom:
+            1px solid var(--color-border);
+}
+
+
+.product-intro-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 100px;
+
+    align-items: start;
+}
+
+
+.product-intro-grid h2 {
+    max-width: 650px;
+}
+
+
+.product-intro-copy {
+    padding-top: 35px;
+}
+
+
+.product-intro-copy p {
+    font-size: 1.08rem;
+}
+
+
+.product-intro-copy p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ==========================================================
+   ATHLOCOSMOS
+   ========================================================== */
+
+.athlocosmos-section {
+    position: relative;
+}
+
+
+.athlocosmos-card {
+    position: relative;
+
+    min-height: 680px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(400px, 1fr);
+
+    gap: 60px;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    border:
+            1px solid var(--color-border);
+
+    border-radius:
+            var(--radius-large);
+
+    background:
+            linear-gradient(
+                    135deg,
+                    rgba(11, 23, 48, .85),
+                    rgba(2, 8, 23, .95)
+            );
+
+    box-shadow:
+            0 30px 100px rgba(0,0,0,.25);
+}
+
+
+.athlocosmos-content {
+    padding: 70px 0 70px 70px;
+
+    position: relative;
+
+    z-index: 3;
+}
+
+
+.product-meta {
+    margin-bottom: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.product-index {
+    color:
+            var(--color-muted);
+
+    font-size: .75rem;
+
+    font-weight: 700;
+
+    letter-spacing: .15em;
+}
+
+
+.product-development-status {
+    padding: 7px 12px;
+
+    border:
+            1px solid rgba(0,217,255,.18);
+
+    border-radius: 100px;
+
+    background:
+            rgba(0,217,255,.06);
+
+    color:
+            var(--color-lightCyan);
+
+    font-size: .65rem;
+
+    font-weight: 700;
+
+    letter-spacing: .12em;
+}
+
+
+.athlocosmos-title {
+    margin-bottom: 10px;
+
+    font-size:
+            clamp(3.5rem, 6vw, 6rem);
+
+    letter-spacing: -.055em;
+}
+
+
+.athlocosmos-title span {
+    background:
+            var(--gradient-blue);
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+.athlocosmos-slogan {
+    margin-bottom: 30px;
+
+    color:
+            var(--color-softIceBlue);
+
+    font-size: 1.3rem;
+
+    font-weight: 500;
+}
+
+
+.athlocosmos-description {
+    max-width: 610px;
+
+    margin-bottom: 40px;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+}
+
+
+.athlocosmos-actions {
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+
+/* ==========================================================
+   ATHLOCOSMOS VISUAL
+   ========================================================== */
+
+.athlocosmos-visual {
+    position: relative;
+
+    min-height: 680px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+.cosmos-background-grid {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+            linear-gradient(
+                    rgba(255,255,255,.02) 1px,
+                    transparent 1px
+            ),
+            linear-gradient(
+                    90deg,
+                    rgba(255,255,255,.02) 1px,
+                    transparent 1px
+            );
+
+    background-size: 55px 55px;
+
+    mask-image:
+            radial-gradient(
+                    circle,
+                    black,
+                    transparent 70%
+            );
+}
+
+
+.cosmos-glow {
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    background:
+            radial-gradient(
+                    circle,
+                    rgba(0,217,255,.18),
+                    rgba(20,107,255,.12) 35%,
+                    rgba(100,59,255,.08) 55%,
+                    transparent 75%
+            );
+
+    filter: blur(25px);
+}
+
+
+.cosmos-system {
+    position: relative;
+
+    width: 430px;
+    height: 430px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.cosmos-core {
+    position: relative;
+
+    width: 190px;
+    height: 190px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+            1px solid rgba(99,230,255,.30);
+
+    border-radius: 50%;
+
+    background:
+            radial-gradient(
+                    circle at 35% 30%,
+                    #146BFF,
+                    #07152D 55%,
+                    #020817
+            );
+
+    box-shadow:
+            0 0 70px rgba(0,140,255,.30),
+            inset 0 0 40px rgba(0,217,255,.08);
+
+    z-index: 10;
+}
+
+
+.cosmos-core-small {
+    margin-bottom: 4px;
+
+    color:
+            var(--color-lightCyan);
+
+    font-size: .65rem;
+
+    font-weight: 700;
+
+    letter-spacing: .25em;
+}
+
+
+.cosmos-core strong {
+    color: white;
+
+    font-size: 1.4rem;
+
+    letter-spacing: .08em;
+}
+
+
+.cosmos-orbit {
+    position: absolute;
+
+    border:
+            1px solid rgba(99,230,255,.20);
+
+    border-radius: 50%;
+}
+
+
+.orbit-1 {
+    width: 300px;
+    height: 300px;
+
+    transform:
+            rotate(20deg)
+            scaleY(.58);
+}
+
+
+.orbit-2 {
+    width: 390px;
+    height: 390px;
+
+    transform:
+            rotate(-35deg)
+            scaleY(.58);
+}
+
+
+.orbit-3 {
+    width: 430px;
+    height: 430px;
+
+    transform:
+            rotate(65deg)
+            scaleY(.50);
+}
+
+
+.cosmos-node {
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background:
+            var(--color-cyan);
+
+    box-shadow:
+            0 0 20px
+            rgba(0,217,255,.8);
+}
+
+
+.node-1 {
+    top: 45px;
+    right: 50px;
+}
+
+
+.node-2 {
+    bottom: 75px;
+    left: 15px;
+}
+
+
+.node-3 {
+    top: 35px;
+    left: 80px;
+}
+
+
+/* ==========================================================
+   PURPOSE
+   ========================================================== */
+
+.product-purpose {
+    background:
+            rgba(2,8,23,.25);
+}
+
+
+.purpose-heading {
+    max-width: 800px;
+
+    margin-bottom: 60px;
+}
+
+
+.purpose-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    border-top:
+            1px solid var(--color-border);
+
+    border-left:
+            1px solid var(--color-border);
+}
+
+
+.purpose-card {
+    min-height: 300px;
+
+    padding: 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    border-right:
+            1px solid var(--color-border);
+
+    border-bottom:
+            1px solid var(--color-border);
+
+    background:
+            rgba(11,23,48,.15);
+
+    transition:
+            background var(--transition-normal),
+            transform var(--transition-normal);
+}
+
+
+.purpose-card:hover {
+    background:
+            rgba(11,23,48,.50);
+}
+
+
+.purpose-number {
+    margin-bottom: auto;
+
+    color:
+            var(--color-cyan);
+
+    font-size: .72rem;
+
+    font-weight: 700;
+
+    letter-spacing: .15em;
+}
+
+
+.purpose-card h3 {
+    margin-top: 70px;
+}
+
+
+.purpose-card p {
+    margin-bottom: 0;
+}
+
+
+.purpose-card-highlight {
+    position: relative;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    rgba(20,107,255,.10),
+                    rgba(100,59,255,.06)
+            );
+}
+
+
+/* ==========================================================
+   PRINCIPLES
+   ========================================================== */
+
+.principles-header {
+    max-width: 800px;
+
+    margin-bottom: 70px;
+}
+
+
+.principles-list {
+    border-top:
+            1px solid var(--color-border);
+}
+
+
+.principle-row {
+    display: grid;
+
+    grid-template-columns:
+        80px 1fr 1.5fr;
+
+    gap: 40px;
+
+    align-items: center;
+
+    padding: 35px 0;
+
+    border-bottom:
+            1px solid var(--color-border);
+}
+
+
+.principle-index {
+    color:
+            var(--color-cyan);
+
+    font-size: .75rem;
+
+    font-weight: 700;
+}
+
+
+.principle-row h3 {
+    margin: 0;
+}
+
+
+.principle-row p {
+    max-width: 600px;
+
+    margin: 0;
+}
+
+
+/* ==========================================================
+   FUTURE PRODUCTS
+   ========================================================== */
+
+.future-products-panel {
+    position: relative;
+
+    padding: 100px 50px;
+
+    overflow: hidden;
+
+    border:
+            1px solid var(--color-border);
+
+    border-radius:
+            var(--radius-large);
+
+    background:
+            linear-gradient(
+                    135deg,
+                    rgba(11,23,48,.70),
+                    rgba(2,8,23,.95)
+            );
+
+    text-align: center;
+}
+
+
+.future-products-panel h2 {
+    max-width: 850px;
+
+    margin:
+            0 auto 25px;
+}
+
+
+.future-products-panel p {
+    max-width: 650px;
+
+    margin:
+            0 auto 50px;
+}
+
+
+.future-glow {
+    position: absolute;
+
+    width: 600px;
+    height: 250px;
+
+    left: 50%;
+    top: -180px;
+
+    transform:
+            translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+            rgba(0,140,255,.18);
+
+    filter:
+            blur(80px);
+}
+
+
+.future-symbols {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+}
+
+
+.future-symbols span {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+            1px solid var(--color-border);
+
+    border-radius: 50%;
+
+    color:
+            var(--color-muted);
+
+    font-size: .8rem;
+
+    font-weight: 700;
+}
+
+
+.future-symbols .future-active {
+    border-color:
+            rgba(0,217,255,.40);
+
+    background:
+            rgba(0,217,255,.08);
+
+    color:
+            var(--color-cyan);
+
+    box-shadow:
+            0 0 30px rgba(0,217,255,.08);
+}
+
+
+.future-symbols .future-more {
+    border-style: dashed;
+}
+
+
+/* ==========================================================
+   CTA
+   ========================================================== */
+
+.products-cta {
+    padding-top: 50px;
+}
+
+
+.products-cta-inner {
+    padding:
+            70px 0;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 70px;
+
+    border-top:
+            1px solid var(--color-border);
+}
+
+
+.products-cta-inner h2 {
+    max-width: 800px;
+
+    margin-bottom: 0;
+}
+
+
+.products-cta-inner > .btn-primary {
+    flex-shrink: 0;
+}
+
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 1000px) {
+
+    .product-intro-grid {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+
+    .product-intro-copy {
+        padding-top: 0;
+    }
+
+
+    .athlocosmos-card {
+        grid-template-columns: 1fr;
+    }
+
+
+    .athlocosmos-content {
+        padding:
+                60px 50px 0;
+    }
+
+
+    .athlocosmos-visual {
+        min-height: 500px;
+    }
+
+
+    .purpose-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 700px) {
+
+    .products-hero {
+        min-height: 500px;
+    }
+
+
+    .products-hero h1 {
+        font-size:
+                clamp(3rem, 14vw, 5rem);
+    }
+
+
+    .athlocosmos-card {
+        min-height: auto;
+    }
+
+
+    .athlocosmos-content {
+        padding:
+                40px 25px 0;
+    }
+
+
+    .product-meta {
+        margin-bottom: 35px;
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .athlocosmos-title {
+        font-size:
+                clamp(3rem, 15vw, 4.5rem);
+    }
+
+
+    .athlocosmos-visual {
+        min-height: 390px;
+    }
+
+
+    .cosmos-system {
+        transform:
+                scale(.72);
+    }
+
+
+    .purpose-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .purpose-card {
+        min-height: 240px;
+    }
+
+
+    .purpose-card h3 {
+        margin-top: 50px;
+    }
+
+
+    .principle-row {
+        grid-template-columns:
+            50px 1fr;
+
+        gap: 20px;
+
+        align-items: start;
+    }
+
+
+    .principle-row p {
+        grid-column:
+                2 / -1;
+    }
+
+
+    .future-products-panel {
+        padding:
+                70px 20px;
+    }
+
+
+    .future-symbols {
+        gap: 8px;
+    }
+
+
+    .future-symbols span {
+        width: 45px;
+        height: 45px;
+    }
+
+
+    .products-cta-inner {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 35px;
+    }
+
+
+    .products-cta-inner > .btn-primary {
+        width: 100%;
+    }
+
+}

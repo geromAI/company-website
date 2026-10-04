@@ -1,8 +1,571 @@
 <!DOCTYPE html>
-<html th:lang="${#locale.language}"  xmlns:th="http://www.thymeleaf.org"
+<html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{Layouts/website-layout}">
+      layout:decorate="~{layout/base}">
+
+<head>
+
+    <title>Contact</title>
+
+    <th:block layout:fragment="page-css">
+        <link rel="stylesheet"
+              th:href="@{/css/contact.css}">
+    </th:block>
+
+</head>
+
+<body>
+
 <main layout:fragment="main-content">
-    <h1>Contact</h1>
+
+
+    <!-- ==================================================
+         HERO
+         ================================================== -->
+
+    <section class="contact-hero">
+
+        <div class="contact-glow contact-glow-one"></div>
+        <div class="contact-glow contact-glow-two"></div>
+
+        <div class="container contact-hero-container">
+
+            <span class="contact-eyebrow">
+                CONTACT geromAI
+            </span>
+
+            <h1>
+                Start a
+                <span class="gradient-text">
+                    conversation.
+                </span>
+            </h1>
+
+            <p>
+                Have a question, an idea or simply want to
+                connect? Send us a message and tell us what's
+                on your mind.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         CONTACT
+         ================================================== -->
+
+    <section class="section contact-section">
+
+        <div class="container">
+
+            <div class="contact-layout">
+
+
+                <!-- ======================================
+                     LEFT
+                     ====================================== -->
+
+                <div class="contact-information">
+
+                    <span class="contact-eyebrow">
+                        LET'S CONNECT
+                    </span>
+
+                    <h2>
+                        We'd like to hear
+                        <span class="gradient-text">
+                            from you.
+                        </span>
+                    </h2>
+
+                    <p class="contact-intro">
+                        Whether you're interested in geromAI,
+                        AthloCosmos, a potential collaboration
+                        or a new technology project, this is
+                        the place to start.
+                    </p>
+
+
+                    <div class="contact-options">
+
+
+                        <div class="contact-option">
+
+                            <span class="contact-option-number">
+                                01
+                            </span>
+
+                            <div>
+
+                                <span class="contact-option-label">
+                                    GENERAL
+                                </span>
+
+                                <strong>
+                                    General Enquiries
+                                </strong>
+
+                                <p>
+                                    Questions about geromAI,
+                                    our products or the company.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-option">
+
+                            <span class="contact-option-number">
+                                02
+                            </span>
+
+                            <div>
+
+                                <span class="contact-option-label">
+                                    PRODUCTS
+                                </span>
+
+                                <strong>
+                                    AthloCosmos
+                                </strong>
+
+                                <p>
+                                    Interest, partnerships or
+                                    questions about AthloCosmos.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-option">
+
+                            <span class="contact-option-number">
+                                03
+                            </span>
+
+                            <div>
+
+                                <span class="contact-option-label">
+                                    PROJECTS
+                                </span>
+
+                                <strong>
+                                    Build with geromAI
+                                </strong>
+
+                                <p>
+                                    Have a product or technology
+                                    idea? Tell us what you want
+                                    to create.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-project-link">
+
+                        <span>
+                            Have a project already in mind?
+                        </span>
+
+                        <a th:href="@{/get-started}">
+                            Start a project
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ======================================
+                     FORM
+                     ====================================== -->
+
+                <div class="contact-form-wrapper">
+
+                    <div class="contact-form-glow"></div>
+
+
+                    <!-- SUCCESS -->
+
+                    <div class="form-success"
+                         th:if="${contactSuccess}">
+
+                        <div class="success-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Message received.
+                            </strong>
+
+                            <p>
+                                Thank you for contacting geromAI.
+                                We'll get back to you as soon
+                                as possible.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ERROR -->
+
+                    <div class="form-error-global"
+                         th:if="${contactError}">
+
+                        <strong>
+                            Something went wrong.
+                        </strong>
+
+                        <p th:text="${contactError}">
+                            Please try again.
+                        </p>
+
+                    </div>
+
+
+                    <form class="contact-form"
+                          th:action="@{/contact}"
+                          th:object="${contactForm}"
+                          method="post">
+
+
+                        <!-- If Spring Security CSRF is enabled,
+                             Thymeleaf/Spring Security normally
+                             handles the token automatically. -->
+
+
+                        <div class="form-heading">
+
+                            <span class="contact-eyebrow">
+                                SEND A MESSAGE
+                            </span>
+
+                            <h2>
+                                How can we help?
+                            </h2>
+
+                            <p>
+                                Fill in the details below and
+                                we'll get back to you.
+                            </p>
+
+                        </div>
+
+
+                        <!-- NAME -->
+
+                        <div class="form-group">
+
+                            <label for="name">
+                                Name
+                                <span>*</span>
+                            </label>
+
+                            <input id="name"
+                                   type="text"
+                                   th:field="*{name}"
+                                   th:classappend="${#fields.hasErrors('name')} ? 'input-error' : ''"
+                                   placeholder="Your name"
+                                   autocomplete="name">
+
+                            <span class="field-error"
+                                  th:if="${#fields.hasErrors('name')}"
+                                  th:errors="*{name}">
+                            </span>
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email
+                                <span>*</span>
+                            </label>
+
+                            <input id="email"
+                                   type="email"
+                                   th:field="*{email}"
+                                   th:classappend="${#fields.hasErrors('email')} ? 'input-error' : ''"
+                                   placeholder="you@example.com"
+                                   autocomplete="email">
+
+                            <span class="field-error"
+                                  th:if="${#fields.hasErrors('email')}"
+                                  th:errors="*{email}">
+                            </span>
+
+                        </div>
+
+
+                        <!-- COMPANY -->
+
+                        <div class="form-group">
+
+                            <label for="company">
+                                Company
+                                <span class="optional">
+                                    Optional
+                                </span>
+                            </label>
+
+                            <input id="company"
+                                   type="text"
+                                   th:field="*{company}"
+                                   placeholder="Company or organization"
+                                   autocomplete="organization">
+
+                        </div>
+
+
+                        <!-- SUBJECT -->
+
+                        <div class="form-group">
+
+                            <label for="subject">
+                                What would you like to discuss?
+                                <span>*</span>
+                            </label>
+
+                            <select id="subject"
+                                    th:field="*{subject}"
+                                    th:classappend="${#fields.hasErrors('subject')} ? 'input-error' : ''">
+
+                                <option value="">
+                                    Select a topic
+                                </option>
+
+                                <option value="GENERAL">
+                                    General enquiry
+                                </option>
+
+                                <option value="ATHLOCOSMOS">
+                                    AthloCosmos
+                                </option>
+
+                                <option value="PROJECT">
+                                    New project
+                                </option>
+
+                                <option value="PARTNERSHIP">
+                                    Partnership
+                                </option>
+
+                                <option value="OTHER">
+                                    Something else
+                                </option>
+
+                            </select>
+
+                            <span class="field-error"
+                                  th:if="${#fields.hasErrors('subject')}"
+                                  th:errors="*{subject}">
+                            </span>
+
+                        </div>
+
+
+                        <!-- MESSAGE -->
+
+                        <div class="form-group">
+
+                            <label for="message">
+                                Message
+                                <span>*</span>
+                            </label>
+
+                            <textarea id="message"
+                                      th:field="*{message}"
+                                      th:classappend="${#fields.hasErrors('message')} ? 'input-error' : ''"
+                                      rows="7"
+                                      placeholder="Tell us a little more..."></textarea>
+
+                            <div class="textarea-bottom">
+
+                                <span class="field-error"
+                                      th:if="${#fields.hasErrors('message')}"
+                                      th:errors="*{message}">
+                                </span>
+
+                                <span class="message-limit">
+                                    Max 5000 characters
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- PRIVACY -->
+
+                        <div class="form-group checkbox-group">
+
+                            <label class="checkbox-label">
+
+                                <input type="checkbox"
+                                       th:field="*{privacyAccepted}">
+
+                                <span class="custom-checkbox"></span>
+
+                                <span class="checkbox-text">
+                                    I agree that geromAI may use
+                                    the information provided to
+                                    respond to my enquiry.
+                                    <span>*</span>
+                                </span>
+
+                            </label>
+
+                            <span class="field-error"
+                                  th:if="${#fields.hasErrors('privacyAccepted')}"
+                                  th:errors="*{privacyAccepted}">
+                            </span>
+
+                        </div>
+
+
+                        <!-- BUTTON -->
+
+                        <button class="contact-submit"
+                                type="submit">
+
+                            <span>
+                                Send Message
+                            </span>
+
+                            <span aria-hidden="true">
+                                →
+                            </span>
+
+                        </button>
+
+
+                        <p class="form-required">
+                            * Required fields
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         OTHER PATH
+         ================================================== -->
+
+    <section class="section contact-next">
+
+        <div class="container">
+
+            <div class="contact-next-grid">
+
+
+                <a class="contact-next-card"
+                   th:href="@{/products}">
+
+                    <span>01</span>
+
+                    <div>
+                        <small>
+                            EXPLORE
+                        </small>
+
+                        <h3>
+                            Our Products
+                        </h3>
+
+                        <p>
+                            Discover what we're building
+                            at geromAI.
+                        </p>
+                    </div>
+
+                    <strong>→</strong>
+
+                </a>
+
+
+                <a class="contact-next-card"
+                   th:href="@{/solutions}">
+
+                    <span>02</span>
+
+                    <div>
+                        <small>
+                            DISCOVER
+                        </small>
+
+                        <h3>
+                            Our Solutions
+                        </h3>
+
+                        <p>
+                            See how geromAI approaches
+                            technology and development.
+                        </p>
+                    </div>
+
+                    <strong>→</strong>
+
+                </a>
+
+
+                <a class="contact-next-card"
+                   th:href="@{/get-started}">
+
+                    <span>03</span>
+
+                    <div>
+                        <small>
+                            BUILD
+                        </small>
+
+                        <h3>
+                            Start a Project
+                        </h3>
+
+                        <p>
+                            Tell us about something you
+                            want to create.
+                        </p>
+                    </div>
+
+                    <strong>→</strong>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
 </main>
+
+</body>
 </html>

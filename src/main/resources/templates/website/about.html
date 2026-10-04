@@ -1,8 +1,644 @@
 <!DOCTYPE html>
-<html th:lang="${#locale.language}"  xmlns:th="http://www.thymeleaf.org"
+<html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{Layouts/website-layout}">
+      layout:decorate="~{layout/base}">
+
+<head>
+
+    <title>About</title>
+
+    <th:block layout:fragment="page-css">
+        <link rel="stylesheet"
+              th:href="@{/css/about.css}">
+    </th:block>
+
+</head>
+
+<body>
+
 <main layout:fragment="main-content">
-    <h1>About</h1>
+
+
+    <!-- ==================================================
+         HERO
+         ================================================== -->
+
+    <section class="about-hero">
+
+        <div class="about-glow about-glow-one"></div>
+        <div class="about-glow about-glow-two"></div>
+
+        <div class="container about-hero-container">
+
+
+            <div class="about-hero-content">
+
+                <span class="about-eyebrow">
+                    ABOUT geromAI
+                </span>
+
+                <h1>
+                    Technology begins with
+                    <span class="gradient-text">
+                        identity.
+                    </span>
+                </h1>
+
+                <p>
+                    geromAI is a technology company built around
+                    the belief that the strongest ideas have an
+                    identity, a purpose and the potential to become
+                    something meaningful.
+                </p>
+
+            </div>
+
+
+            <div class="about-hero-symbol">
+
+                <div class="about-symbol-glow"></div>
+
+                <img th:src="@{/images/geromAI_G_icon_v2.svg}"
+                     alt="geromAI"
+                     class="about-g">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         IDENTITY
+         ================================================== -->
+
+    <section class="section identity-section">
+
+        <div class="container">
+
+            <div class="identity-grid">
+
+
+                <div class="identity-heading">
+
+                    <span class="about-eyebrow">
+                        OUR IDENTITY
+                    </span>
+
+                    <h2>
+                        More than a
+                        <span class="gradient-text">
+                            name.
+                        </span>
+                    </h2>
+
+                </div>
+
+
+                <div class="identity-copy">
+
+                    <p class="identity-large">
+
+                        geromAI represents the point where
+                        identity, technology and imagination
+                        meet.
+
+                    </p>
+
+                    <p>
+                        The company was created with a simple
+                        ambition: build technology that has a
+                        reason to exist.
+                    </p>
+
+                    <p>
+                        Instead of creating software only for
+                        the sake of technology, we want to build
+                        digital products with their own character,
+                        purpose and world around them.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         NAME / BRAND
+         ================================================== -->
+
+    <section class="section name-section">
+
+        <div class="container">
+
+            <div class="name-panel">
+
+                <div class="name-panel-glow"></div>
+
+
+                <div class="name-heading">
+
+                    <span class="about-eyebrow">
+                        THE NAME
+                    </span>
+
+                    <h2>
+                        gerom<span>AI</span>
+                    </h2>
+
+                    <p>
+                        A name shaped by identity and completed
+                        by technology.
+                    </p>
+
+                </div>
+
+
+                <div class="name-visual">
+
+
+                    <div class="name-line"></div>
+
+
+                    <div class="name-definition">
+
+                        <div>
+                            <span>IDENTITY</span>
+                            <strong>Origin</strong>
+                        </div>
+
+                        <div>
+                            <span>IDEA</span>
+                            <strong>Purpose</strong>
+                        </div>
+
+                        <div>
+                            <span>AI</span>
+                            <strong>Innovation</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         SLOGAN
+         ================================================== -->
+
+    <section class="section slogan-section">
+
+        <div class="container slogan-container">
+
+            <span class="about-eyebrow">
+                OUR PHILOSOPHY
+            </span>
+
+            <p class="slogan-small">
+                Four words that define how we think.
+            </p>
+
+            <h2 class="about-slogan">
+                Where Identity
+                <br>
+                Becomes
+                <span class="gradient-text">
+                    Innovation.
+                </span>
+            </h2>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         PHILOSOPHY BREAKDOWN
+         ================================================== -->
+
+    <section class="section philosophy-breakdown">
+
+        <div class="container">
+
+            <div class="philosophy-grid">
+
+
+                <article class="philosophy-card">
+
+                    <span class="philosophy-number">
+                        01
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Identity
+                        </h3>
+
+                        <p>
+                            Every meaningful product starts with
+                            understanding what it is, who it is for
+                            and why it should exist.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="philosophy-card">
+
+                    <span class="philosophy-number">
+                        02
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Purpose
+                        </h3>
+
+                        <p>
+                            Technology becomes valuable when it
+                            solves something real and creates a
+                            meaningful experience for people.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="philosophy-card">
+
+                    <span class="philosophy-number">
+                        03
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Innovation
+                        </h3>
+
+                        <p>
+                            Innovation is not technology for its
+                            own sake. It is finding a better way
+                            to turn an idea into reality.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         MISSION / VISION
+         ================================================== -->
+
+    <section class="section mission-section">
+
+        <div class="container">
+
+            <div class="mission-grid">
+
+
+                <article class="mission-card">
+
+                    <span class="mission-label">
+                        MISSION
+                    </span>
+
+                    <h2>
+                        Turn meaningful ideas into
+                        <span class="gradient-text">
+                            technology.
+                        </span>
+                    </h2>
+
+                    <p>
+                        Our mission is to design and build digital
+                        products that connect people, create
+                        opportunities and transform strong ideas
+                        into scalable technology.
+                    </p>
+
+                </article>
+
+
+                <article class="mission-card">
+
+                    <span class="mission-label">
+                        VISION
+                    </span>
+
+                    <h2>
+                        Build digital worlds that
+                        <span class="gradient-text">
+                            matter.
+                        </span>
+                    </h2>
+
+                    <p>
+                        Our vision is for geromAI to become a
+                        technology company known for creating
+                        products with distinct identities,
+                        meaningful communities and global
+                        potential.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         VALUES
+         ================================================== -->
+
+    <section class="section values-section">
+
+        <div class="container">
+
+
+            <div class="values-heading">
+
+                <span class="about-eyebrow">
+                    WHAT GUIDES US
+                </span>
+
+                <h2>
+                    Principles behind
+                    <span class="gradient-text">
+                        geromAI.
+                    </span>
+                </h2>
+
+            </div>
+
+
+            <div class="values-grid">
+
+
+                <article class="value-card">
+
+                    <span>01</span>
+
+                    <h3>
+                        Think with purpose.
+                    </h3>
+
+                    <p>
+                        Start with the problem and the reason
+                        behind the product before choosing
+                        technology.
+                    </p>
+
+                </article>
+
+
+                <article class="value-card">
+
+                    <span>02</span>
+
+                    <h3>
+                        Build for people.
+                    </h3>
+
+                    <p>
+                        Technology should adapt to people,
+                        not force people to adapt to
+                        technology.
+                    </p>
+
+                </article>
+
+
+                <article class="value-card">
+
+                    <span>03</span>
+
+                    <h3>
+                        Design for growth.
+                    </h3>
+
+                    <p>
+                        Build foundations that can evolve as
+                        products, communities and ideas grow.
+                    </p>
+
+                </article>
+
+
+                <article class="value-card">
+
+                    <span>04</span>
+
+                    <h3>
+                        Create an identity.
+                    </h3>
+
+                    <p>
+                        Products should be recognizable not only
+                        by how they look, but by what they
+                        represent.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         FROM GEROMAI TO ATHLOCOSMOS
+         ================================================== -->
+
+    <section class="section journey-section">
+
+        <div class="container">
+
+            <div class="journey-panel">
+
+                <div class="journey-glow"></div>
+
+
+                <div class="journey-copy">
+
+                    <span class="about-eyebrow">
+                        THE FIRST CHAPTER
+                    </span>
+
+                    <h2>
+                        The idea becomes
+                        <span class="gradient-text">
+                            real.
+                        </span>
+                    </h2>
+
+                    <p>
+                        AthloCosmos is the first product being
+                        developed under the geromAI identity.
+                    </p>
+
+                    <p>
+                        Its ambition is to connect the world of
+                        sport through a professional digital
+                        ecosystem built for athletes, coaches,
+                        clubs, organizations and professionals.
+                    </p>
+
+
+                    <a class="btn-primary"
+                       th:href="@{/products#athlocosmos}">
+
+                        Discover AthloCosmos
+
+                        <span>→</span>
+
+                    </a>
+
+                </div>
+
+
+                <div class="journey-visual">
+
+                    <div class="journey-gerom">
+                        G
+                    </div>
+
+                    <div class="journey-line">
+
+                        <span></span>
+
+                    </div>
+
+                    <div class="journey-athlo">
+                        AC
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         FUTURE
+         ================================================== -->
+
+    <section class="section future-section">
+
+        <div class="container future-container">
+
+            <span class="about-eyebrow">
+                THE FUTURE
+            </span>
+
+            <h2>
+                One identity.
+                <br>
+                Many ideas.
+                <br>
+                <span class="gradient-text">
+                    Infinite possibilities.
+                </span>
+            </h2>
+
+            <p>
+                AthloCosmos is the beginning, not the limit.
+                geromAI exists to keep creating.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         CTA
+         ================================================== -->
+
+    <section class="section about-cta">
+
+        <div class="container">
+
+            <div class="about-cta-panel">
+
+                <div class="about-cta-glow"></div>
+
+                <span class="about-eyebrow">
+                    CREATE WITH US
+                </span>
+
+                <h2>
+                    Your idea could be the
+                    <span class="gradient-text">
+                        next chapter.
+                    </span>
+                </h2>
+
+                <p>
+                    Tell us what you want to create.
+                </p>
+
+
+                <div class="about-cta-actions">
+
+                    <a class="btn-primary"
+                       th:href="@{/get-started}">
+
+                        Start a Project
+
+                        <span>→</span>
+
+                    </a>
+
+
+                    <a class="btn-secondary"
+                       th:href="@{/contact}">
+
+                        Contact Us
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
 </main>
+
+</body>
 </html>

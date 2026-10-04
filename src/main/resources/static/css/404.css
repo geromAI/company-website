@@ -1,0 +1,515 @@
+/* ==========================================================
+   geromAI — 404 PAGE
+   ========================================================== */
+
+
+.error-page {
+    position: relative;
+
+    min-height: calc(100vh - var(--header-height));
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    border-bottom: 1px solid var(--color-border);
+}
+
+
+/* ==========================================================
+   BACKGROUND GRID
+   ========================================================== */
+
+.error-grid {
+    position: absolute;
+    inset: 0;
+
+    background:
+            linear-gradient(
+                    rgba(255, 255, 255, .018) 1px,
+                    transparent 1px
+            ),
+            linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, .018) 1px,
+                    transparent 1px
+            );
+
+    background-size: 75px 75px;
+
+    mask-image:
+            radial-gradient(
+                    circle at center,
+                    black,
+                    transparent 78%
+            );
+
+    -webkit-mask-image:
+            radial-gradient(
+                    circle at center,
+                    black,
+                    transparent 78%
+            );
+
+    pointer-events: none;
+
+    z-index: -3;
+}
+
+
+/* ==========================================================
+   BACKGROUND GLOWS
+   ========================================================== */
+
+.error-glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(130px);
+
+    pointer-events: none;
+
+    z-index: -2;
+}
+
+
+.error-glow-one {
+    width: 600px;
+    height: 600px;
+
+    left: 50%;
+    top: -350px;
+
+    transform: translateX(-50%);
+
+    background: rgba(0, 140, 255, .14);
+}
+
+
+.error-glow-two {
+    width: 450px;
+    height: 450px;
+
+    right: -200px;
+    bottom: -220px;
+
+    background: rgba(100, 59, 255, .10);
+}
+
+
+/* ==========================================================
+   CONTAINER
+   ========================================================== */
+
+.error-container {
+    position: relative;
+
+    width: 100%;
+
+    padding-top: 90px;
+    padding-bottom: 90px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    z-index: 2;
+}
+
+
+/* ==========================================================
+   404 CODE
+   ========================================================== */
+
+.error-code {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: clamp(5px, 1.5vw, 22px);
+
+    margin-bottom: 35px;
+
+    line-height: 1;
+}
+
+
+.error-number {
+    color: var(--color-pureWhite);
+
+    font-family: var(--font-main);
+
+    font-size: clamp(8rem, 19vw, 17rem);
+
+    font-weight: 700;
+
+    line-height: .75;
+
+    letter-spacing: -.09em;
+
+    text-shadow:
+            0 15px 60px rgba(0, 0, 0, .30);
+}
+
+
+/* ==========================================================
+   G LOGO — THE ZERO
+   ========================================================== */
+
+.error-logo-wrapper {
+    position: relative;
+
+    width: clamp(115px, 15vw, 220px);
+    height: clamp(115px, 15vw, 220px);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+
+.error-logo {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+
+    z-index: 2;
+
+    filter:
+            drop-shadow(
+                    0 20px 45px
+                    rgba(20, 107, 255, .30)
+            )
+            drop-shadow(
+                    0 0 25px
+                    rgba(0, 217, 255, .12)
+            );
+}
+
+
+.error-logo-glow {
+    position: absolute;
+
+    width: 105%;
+    height: 105%;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+            translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+            radial-gradient(
+                    circle,
+                    rgba(0, 217, 255, .18) 0%,
+                    rgba(20, 107, 255, .13) 35%,
+                    rgba(100, 59, 255, .08) 55%,
+                    transparent 75%
+            );
+
+    filter: blur(30px);
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* ==========================================================
+   CONTENT
+   ========================================================== */
+
+.error-content {
+    position: relative;
+
+    max-width: 780px;
+
+    margin: 0 auto;
+}
+
+
+.error-eyebrow {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: var(--color-cyan);
+
+    font-size: .7rem;
+
+    font-weight: 700;
+
+    letter-spacing: .2em;
+
+    text-transform: uppercase;
+}
+
+
+.error-content h1 {
+    margin:
+            0 auto 22px;
+
+    color: var(--color-pureWhite);
+
+    font-size: clamp(2.4rem, 5vw, 4.8rem);
+
+    font-weight: 700;
+
+    line-height: 1.03;
+
+    letter-spacing: -.05em;
+}
+
+
+.error-content h1 span {
+    display: block;
+}
+
+
+.error-content p {
+    max-width: 570px;
+
+    margin:
+            0 auto 32px;
+
+    color: var(--color-textSecondary);
+
+    font-size: 1rem;
+
+    line-height: 1.75;
+}
+
+
+/* ==========================================================
+   ACTIONS
+   ========================================================== */
+
+.error-actions {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+
+.error-actions .btn-primary,
+.error-actions .btn-secondary {
+    min-height: 48px;
+}
+
+
+/* ==========================================================
+   BRAND MESSAGE
+   ========================================================== */
+
+.error-brand {
+    width: min(100%, 600px);
+
+    margin-top: 70px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+}
+
+
+.error-brand > span {
+    height: 1px;
+
+    flex: 1;
+
+    background:
+            linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255, 255, 255, .12)
+            );
+}
+
+
+.error-brand > span:last-child {
+    background:
+            linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, .12),
+                    transparent
+            );
+}
+
+
+.error-brand p {
+    margin: 0;
+
+    flex-shrink: 0;
+
+    color: var(--color-muted);
+
+    font-size: .67rem;
+
+    font-weight: 600;
+
+    letter-spacing: .12em;
+
+    text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 900px) {
+
+    .error-container {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+
+    .error-code {
+        margin-bottom: 40px;
+    }
+
+
+    .error-brand {
+        margin-top: 60px;
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 700px) {
+
+    .error-page {
+        min-height:
+                calc(100vh - var(--header-height));
+    }
+
+
+    .error-container {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+
+    .error-code {
+        gap: 4px;
+
+        margin-bottom: 35px;
+    }
+
+
+    .error-number {
+        font-size:
+                clamp(6.5rem, 31vw, 9rem);
+    }
+
+
+    .error-logo-wrapper {
+        width:
+                clamp(90px, 24vw, 130px);
+
+        height:
+                clamp(90px, 24vw, 130px);
+    }
+
+
+    .error-content h1 {
+        font-size:
+                clamp(2.3rem, 11vw, 3.5rem);
+    }
+
+
+    .error-content p {
+        font-size: .95rem;
+    }
+
+
+    .error-actions {
+        width: 100%;
+
+        flex-direction: column;
+    }
+
+
+    .error-actions .btn-primary,
+    .error-actions .btn-secondary {
+        width: 100%;
+    }
+
+
+    .error-brand {
+        margin-top: 55px;
+
+        gap: 12px;
+    }
+
+
+    .error-brand p {
+        font-size: .56rem;
+
+        letter-spacing: .08em;
+    }
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+   ========================================================== */
+
+@media (max-width: 420px) {
+
+    .error-code {
+        gap: 0;
+    }
+
+
+    .error-number {
+        font-size: 6.2rem;
+    }
+
+
+    .error-logo-wrapper {
+        width: 82px;
+        height: 82px;
+    }
+
+
+    .error-brand > span {
+        display: none;
+    }
+
+}

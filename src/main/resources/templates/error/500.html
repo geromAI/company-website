@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/base}">
+
+<head>
+
+    <title>Something Went Wrong</title>
+
+    <th:block layout:fragment="page-css">
+        <link rel="stylesheet"
+              th:href="@{/css/404.css}">
+    </th:block>
+
+</head>
+
+<body>
+
+<main layout:fragment="main-content">
+
+    <section class="error-page">
+
+        <div class="error-glow error-glow-one"></div>
+        <div class="error-glow error-glow-two"></div>
+
+        <div class="error-grid"></div>
+
+
+        <div class="container error-container">
+
+            <div class="error-code">
+
+                <span class="error-number">
+                    5
+                </span>
+
+                <div class="error-logo-wrapper">
+
+                    <div class="error-logo-glow"></div>
+
+                    <img th:src="@{/images/geromAI_G_icon_v2.svg}"
+                         class="error-logo"
+                         alt="">
+
+                </div>
+
+                <span class="error-number">
+                    0
+                </span>
+
+            </div>
+
+
+            <div class="error-content">
+
+                <span class="error-eyebrow">
+                    SOMETHING WENT WRONG
+                </span>
+
+                <h1>
+                    Something interrupted
+                    <span class="gradient-text">
+                        the connection.
+                    </span>
+                </h1>
+
+                <p>
+                    We couldn't complete this request.
+                    Please try again or return to the geromAI homepage.
+                </p>
+
+
+                <div class="error-actions">
+
+                    <a th:href="@{/}"
+                       class="btn-primary">
+
+                        <span>Back to Home</span>
+                        <span aria-hidden="true">→</span>
+
+                    </a>
+
+                    <a th:href="@{/contact}"
+                       class="btn-secondary">
+                        Contact geromAI
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+</body>
+</html>

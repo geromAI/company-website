@@ -1,8 +1,347 @@
 <!DOCTYPE html>
-<html th:lang="${#locale.language}"  xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{Layouts/website-layout}">
+<html layout:decorate="~{layout/base}" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Products</title>
+    <th:block layout:fragment="page-css">
+        <link rel="stylesheet" th:href="@{/css/products.css}">
+    </th:block>
+</head>
+<body>
 <main layout:fragment="main-content">
-    <h1>Products</h1>
+    <!-- ==================================================
+         PRODUCTS HERO
+         ================================================== -->
+    <section class="products-hero">
+        <div class="products-glow products-glow-one"></div>
+        <div class="products-glow products-glow-two"></div>
+        <div class="container products-hero-container">
+
+            <span class="products-eyebrow">
+                geromAI PRODUCTS
+            </span>
+            <h1>
+                Ideas transformed into
+                <span class="gradient-text">
+                    products.
+                </span>
+            </h1>
+            <p>
+                We build technology around meaningful ideas —
+                creating digital products designed to connect,
+                empower and evolve. </p>
+        </div>
+    </section>
+    <!-- ==================================================
+         PRODUCT INTRO
+         ================================================== -->
+    <section class="section product-introduction">
+        <div class="container">
+            <div class="product-intro-grid">
+                <div>
+
+                    <span class="products-eyebrow">
+                        OUR APPROACH
+                    </span>
+                    <h2>
+                        Building more than
+                        <span class="gradient-text">
+                            software.
+                        </span>
+                    </h2>
+                </div>
+                <div class="product-intro-copy">
+                    <p>
+                        geromAI products begin with a simple
+                        question: can technology create a
+                        better way for people to connect,
+                        discover and participate? </p>
+                    <p>
+                        From that idea, we design digital
+                        ecosystems with their own identity,
+                        purpose and potential to grow. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================================================
+         ATHLOCOSMOS
+         ================================================== -->
+    <section class="section athlocosmos-section" id="athlocosmos">
+        <div class="container">
+            <article class="athlocosmos-card">
+                <!-- LEFT -->
+                <div class="athlocosmos-content">
+                    <div class="product-meta">
+
+                        <span class="product-index">
+                            01
+                        </span>
+                        <span class="product-development-status">
+                            IN DEVELOPMENT
+                        </span>
+                    </div>
+                    <span class="products-eyebrow">
+                        FLAGSHIP PRODUCT
+                    </span>
+                    <h2 class="athlocosmos-title">
+                        Athlo<span>Cosmos</span>
+                    </h2>
+                    <p class="athlocosmos-slogan">
+                        Connecting the world of sport. </p>
+                    <p class="athlocosmos-description">
+                        A digital professional network designed
+                        around the global sports ecosystem.
+                        AthloCosmos aims to bring athletes,
+                        coaches, clubs, organizations,
+                        professionals and opportunities together
+                        inside one connected digital world. </p>
+                    <div class="athlocosmos-actions">
+                        <a class="btn-primary" th:href="@{/contact}">
+                            Follow the Journey
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- RIGHT / VISUAL -->
+                <div class="athlocosmos-visual">
+                    <div class="cosmos-background-grid"></div>
+                    <div class="cosmos-glow"></div>
+                    <div class="cosmos-system">
+                        <div class="cosmos-orbit orbit-1">
+                            <span class="cosmos-node node-1"></span>
+                        </div>
+                        <div class="cosmos-orbit orbit-2">
+                            <span class="cosmos-node node-2"></span>
+                        </div>
+                        <div class="cosmos-orbit orbit-3">
+                            <span class="cosmos-node node-3"></span>
+                        </div>
+                        <div class="cosmos-core">
+
+                            <span class="cosmos-core-small">
+                                ATHLO
+                            </span>
+                            <strong>
+                                COSMOS
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+    <!-- ==================================================
+         ATHLOCOSMOS PURPOSE
+         ================================================== -->
+    <section class="section product-purpose">
+        <div class="container">
+            <div class="purpose-heading">
+
+                <span class="products-eyebrow">
+                    ONE WORLD OF SPORT
+                </span>
+                <h2>
+                    Designed to connect the
+                    <span class="gradient-text">
+                        ecosystem.
+                    </span>
+                </h2>
+            </div>
+            <div class="purpose-grid">
+                <article class="purpose-card">
+
+                    <span class="purpose-number">
+                        01
+                    </span>
+                    <h3>Athletes</h3>
+                    <p>
+                        Build a professional identity,
+                        showcase a sporting journey and
+                        discover new opportunities. </p>
+                </article>
+                <article class="purpose-card">
+
+                    <span class="purpose-number">
+                        02
+                    </span>
+                    <h3>Coaches</h3>
+                    <p>
+                        Connect with athletes, organizations
+                        and the wider professional sports
+                        community. </p>
+                </article>
+                <article class="purpose-card">
+
+                    <span class="purpose-number">
+                        03
+                    </span>
+                    <h3>Clubs</h3>
+                    <p>
+                        Create a digital presence and connect
+                        with talent, professionals and the
+                        sporting ecosystem. </p>
+                </article>
+                <article class="purpose-card">
+
+                    <span class="purpose-number">
+                        04
+                    </span>
+                    <h3>Organizations</h3>
+                    <p>
+                        Participate in a connected network
+                        designed specifically around the
+                        world of sport. </p>
+                </article>
+                <article class="purpose-card">
+
+                    <span class="purpose-number">
+                        05
+                    </span>
+                    <h3>Professionals</h3>
+                    <p>
+                        Build relationships across the
+                        business, performance and technology
+                        sides of sport. </p>
+                </article>
+                <article class="purpose-card purpose-card-highlight">
+
+                    <span class="purpose-number">
+                        ∞
+                    </span>
+                    <h3>One Cosmos</h3>
+                    <p>
+                        Different roles. Different sports.
+                        Different countries. One connected
+                        professional ecosystem. </p>
+                </article>
+            </div>
+        </div>
+    </section>
+    <!-- ==================================================
+         PRODUCT PRINCIPLES
+         ================================================== -->
+    <section class="section principles-section">
+        <div class="container">
+            <div class="principles-header">
+
+                <span class="products-eyebrow">
+                    PRODUCT PRINCIPLES
+                </span>
+                <h2>
+                    Built around
+                    <span class="gradient-text">
+                        connection.
+                    </span>
+                </h2>
+            </div>
+            <div class="principles-list">
+                <div class="principle-row">
+
+                    <span class="principle-index">
+                        01
+                    </span>
+                    <h3>
+                        Identity </h3>
+                    <p>
+                        Give every member of the sporting
+                        ecosystem a meaningful professional
+                        presence. </p>
+                </div>
+                <div class="principle-row">
+
+                    <span class="principle-index">
+                        02
+                    </span>
+                    <h3>
+                        Discovery </h3>
+                    <p>
+                        Make people, organizations and
+                        opportunities easier to discover. </p>
+                </div>
+                <div class="principle-row">
+
+                    <span class="principle-index">
+                        03
+                    </span>
+                    <h3>
+                        Connection </h3>
+                    <p>
+                        Reduce the distance between every
+                        part of the global sports world. </p>
+                </div>
+                <div class="principle-row">
+
+                    <span class="principle-index">
+                        04
+                    </span>
+                    <h3>
+                        Opportunity </h3>
+                    <p>
+                        Create an environment where meaningful
+                        professional opportunities can emerge. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================================================
+         FUTURE PRODUCTS
+         ================================================== -->
+    <section class="section future-products">
+        <div class="container">
+            <div class="future-products-panel">
+                <div class="future-glow"></div>
+                <span class="products-eyebrow">
+                    WHAT COMES NEXT
+                </span>
+                <h2>
+                    AthloCosmos is only the
+                    <span class="gradient-text">
+                        beginning.
+                    </span>
+                </h2>
+                <p>
+                    geromAI is built to create and evolve
+                    digital products around ideas with the
+                    potential to become something bigger. </p>
+                <div class="future-symbols">
+
+                    <span class="future-active">
+                        01
+                    </span>
+                    <span>02</span>
+                    <span>03</span>
+                    <span class="future-more">
+                        +
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==================================================
+         CTA
+         ================================================== -->
+    <section class="section products-cta">
+        <div class="container">
+            <div class="products-cta-inner">
+                <div>
+                    <span class="products-eyebrow">
+                        geromAI
+                    </span>
+                    <h2>
+                        Have an idea that could become
+                        <span class="gradient-text">
+                            something real?
+                        </span>
+                    </h2>
+                </div>
+                <a class="btn-primary" th:href="@{/get-started}">
+                    Start a Project
+                    <span>→</span>
+                </a>
+            </div>
+        </div>
+    </section>
 </main>
+</body>
 </html>

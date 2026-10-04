@@ -1,8 +1,513 @@
 <!DOCTYPE html>
-<html th:lang="${#locale.language}"  xmlns:th="http://www.thymeleaf.org"
+<html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{Layouts/website-layout}">
+      layout:decorate="~{layout/base}">
+
+<head>
+
+    <title>Home</title>
+
+    <th:block layout:fragment="page-css">
+        <link rel="stylesheet"
+              th:href="@{/css/home.css}">
+    </th:block>
+
+</head>
+
+
+<body>
+
+
 <main layout:fragment="main-content">
-    <h1>geromAI — Where Identity Becomes Innovation.</h1>
+
+
+    <!-- ==================================================
+         HERO
+         ================================================== -->
+
+    <section class="home-hero">
+
+        <div class="hero-background-glow hero-glow-one"></div>
+        <div class="hero-background-glow hero-glow-two"></div>
+
+
+        <div class="container hero-container">
+
+
+            <div class="hero-content">
+
+
+                <div class="hero-badge">
+
+                    <span class="hero-badge-dot"></span>
+
+                    Building what comes next
+
+                </div>
+
+
+                <h1>
+
+                    Where Identity
+                    <br>
+
+                    Becomes
+
+                    <span class="gradient-text">
+                        Innovation.
+                    </span>
+
+                </h1>
+
+
+                <p class="hero-description">
+
+                    geromAI creates intelligent digital products,
+                    platforms and technology designed to connect
+                    people, ideas and industries.
+
+                </p>
+
+
+                <div class="hero-actions">
+
+                    <a class="btn-primary hero-primary"
+                       th:href="@{/get-started}">
+
+                        Get Started
+
+                        <span aria-hidden="true">→</span>
+
+                    </a>
+
+
+                    <a class="btn-secondary"
+                       th:href="@{/products}">
+
+                        Explore Products
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- GEROMAI G -->
+
+            <div class="hero-visual">
+
+                <div class="hero-logo-glow"></div>
+
+                <img class="hero-g"
+                     th:src="@{/images/geromAI_G_icon_v2.svg}"
+                     alt="geromAI">
+
+            </div>
+
+
+        </div>
+
+
+        <div class="hero-scroll">
+
+            <span>Discover</span>
+
+            <div class="hero-scroll-line"></div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         INTRO
+         ================================================== -->
+
+    <section class="section home-intro">
+
+        <div class="container">
+
+
+            <div class="section-heading">
+
+                <span class="section-eyebrow">
+                    geromAI
+                </span>
+
+
+                <h2>
+                    Technology built around
+                    <span class="gradient-text">
+                        ideas.
+                    </span>
+                </h2>
+
+
+                <p>
+
+                    We transform ambitious ideas into digital
+                    products designed for real people, real
+                    communities and real-world impact.
+
+                </p>
+
+            </div>
+
+
+            <div class="capabilities-grid">
+
+
+                <article class="card capability-card">
+
+                    <span class="capability-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Digital Products
+                    </h3>
+
+                    <p>
+                        Modern digital platforms built around
+                        strong product thinking and scalable
+                        technology.
+                    </p>
+
+                </article>
+
+
+                <article class="card capability-card">
+
+                    <span class="capability-number">
+                        02
+                    </span>
+
+                    <h3>
+                        Intelligent Systems
+                    </h3>
+
+                    <p>
+                        AI-powered experiences and intelligent
+                        systems designed to make technology
+                        more useful.
+                    </p>
+
+                </article>
+
+
+                <article class="card capability-card">
+
+                    <span class="capability-number">
+                        03
+                    </span>
+
+                    <h3>
+                        Connected Experiences
+                    </h3>
+
+                    <p>
+                        Technology that connects people,
+                        organizations, communities and
+                        opportunities.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         ATHLOCOSMOS
+         ================================================== -->
+
+    <section class="section featured-product">
+
+        <div class="container">
+
+
+            <div class="product-panel">
+
+
+                <div class="product-content">
+
+
+                    <span class="section-eyebrow">
+                        OUR FIRST PRODUCT
+                    </span>
+
+
+                    <div class="product-status">
+                        IN DEVELOPMENT
+                    </div>
+
+
+                    <h2>
+                        Athlo<span class="gradient-text">Cosmos</span>
+                    </h2>
+
+
+                    <p class="product-tagline">
+
+                        Connecting the world of sport.
+
+                    </p>
+
+
+                    <p class="product-description">
+
+                        AthloCosmos is being designed as a
+                        professional network for the global
+                        sports ecosystem — connecting athletes,
+                        coaches, clubs, organizations and
+                        professionals through one digital world.
+
+                    </p>
+
+
+                    <a class="product-link"
+                       th:href="@{/products#athlocosmos}">
+
+                        Discover AthloCosmos
+
+                        <span>→</span>
+
+                    </a>
+
+                </div>
+
+
+                <div class="product-visual">
+
+                    <div class="planet">
+
+                        <div class="planet-core">
+                            AC
+                        </div>
+
+                        <span class="orbit orbit-one"></span>
+                        <span class="orbit orbit-two"></span>
+                        <span class="orbit orbit-three"></span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         SOLUTIONS
+         ================================================== -->
+
+    <section class="section solutions-preview">
+
+        <div class="container">
+
+
+            <div class="section-heading section-heading-row">
+
+                <div>
+
+                    <span class="section-eyebrow">
+                        WHAT WE BUILD
+                    </span>
+
+                    <h2>
+                        From idea to
+                        <span class="gradient-text">
+                            technology.
+                        </span>
+                    </h2>
+
+                </div>
+
+
+                <a class="section-link"
+                   th:href="@{/solutions}">
+
+                    Explore Solutions →
+
+                </a>
+
+            </div>
+
+
+            <div class="solutions-grid">
+
+
+                <article class="solution-card">
+
+                    <div class="solution-icon">
+                        01
+                    </div>
+
+                    <h3>
+                        Web Platforms
+                    </h3>
+
+                    <p>
+                        Scalable, responsive and carefully
+                        engineered web applications.
+                    </p>
+
+                </article>
+
+
+                <article class="solution-card">
+
+                    <div class="solution-icon">
+                        02
+                    </div>
+
+                    <h3>
+                        Mobile Experiences
+                    </h3>
+
+                    <p>
+                        Connected mobile products built around
+                        usability and performance.
+                    </p>
+
+                </article>
+
+
+                <article class="solution-card">
+
+                    <div class="solution-icon">
+                        03
+                    </div>
+
+                    <h3>
+                        AI & Intelligence
+                    </h3>
+
+                    <p>
+                        Intelligent functionality integrated
+                        where it creates meaningful value.
+                    </p>
+
+                </article>
+
+
+                <article class="solution-card">
+
+                    <div class="solution-icon">
+                        04
+                    </div>
+
+                    <h3>
+                        Backend Systems
+                    </h3>
+
+                    <p>
+                        Secure and scalable services designed
+                        to support products as they grow.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         PHILOSOPHY
+         ================================================== -->
+
+    <section class="section philosophy-section">
+
+        <div class="container philosophy-container">
+
+
+            <span class="philosophy-label">
+                OUR PHILOSOPHY
+            </span>
+
+
+            <p class="philosophy-text">
+
+                Great technology should have an
+
+                <span>identity</span>,
+
+                a purpose and the power to become something
+
+                <span>meaningful.</span>
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         FINAL CTA
+         ================================================== -->
+
+    <section class="section final-cta">
+
+        <div class="container">
+
+
+            <div class="final-cta-panel">
+
+                <div class="cta-glow"></div>
+
+
+                <span class="section-eyebrow">
+                    LET'S BUILD
+                </span>
+
+
+                <h2>
+                    Have an idea worth
+                    <span class="gradient-text">
+                        creating?
+                    </span>
+                </h2>
+
+
+                <p>
+                    Let's turn it into something real.
+                </p>
+
+
+                <a class="btn-primary final-cta-button"
+                   th:href="@{/get-started}">
+
+                    Start a Project
+
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
 </main>
+
+</body>
 </html>

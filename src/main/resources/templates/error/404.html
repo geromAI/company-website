@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/base}">
+
+<head>
+
+    <title>Page Not Found</title>
+
+    <th:block layout:fragment="page-css">
+        <link rel="stylesheet"
+              th:href="@{/css/404.css}">
+    </th:block>
+
+</head>
+
+<body>
+
+<main layout:fragment="main-content">
+
+    <section class="error-page">
+
+        <!-- Background effects -->
+        <div class="error-glow error-glow-one"></div>
+        <div class="error-glow error-glow-two"></div>
+
+        <div class="error-grid"></div>
+
+
+        <div class="container error-container">
+
+
+            <!-- ==============================
+                 404
+                 G ICON ACTS AS THE ZERO
+                 ============================== -->
+
+            <div class="error-code"
+                 aria-label="404">
+
+                <span class="error-number">
+                    4
+                </span>
+
+
+                <div class="error-logo-wrapper">
+
+                    <div class="error-logo-glow"></div>
+
+                    <img th:src="@{/images/geromAI_G_icon_v2.svg}"
+                         class="error-logo"
+                         alt="">
+
+                </div>
+
+
+                <span class="error-number">
+                    4
+                </span>
+
+            </div>
+
+
+            <!-- ==============================
+                 CONTENT
+                 ============================== -->
+
+            <div class="error-content">
+
+                <span class="error-eyebrow">
+                    PAGE NOT FOUND
+                </span>
+
+
+                <h1>
+                    This page is outside
+                    <span class="gradient-text">
+                        our cosmos.
+                    </span>
+                </h1>
+
+
+                <p>
+                    The page you're looking for may have moved,
+                    changed identity, or never existed.
+                </p>
+
+
+                <div class="error-actions">
+
+                    <a th:href="@{/}"
+                       class="btn-primary">
+
+                        <span>
+                            Back to Home
+                        </span>
+
+                        <span aria-hidden="true">
+                            →
+                        </span>
+
+                    </a>
+
+
+                    <a th:href="@{/contact}"
+                       class="btn-secondary">
+
+                        Contact geromAI
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==============================
+                 SMALL BRAND MESSAGE
+                 ============================== -->
+
+            <div class="error-brand">
+
+                <span></span>
+
+                <p>
+                    Where Identity Becomes Innovation.
+                </p>
+
+                <span></span>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<th:block layout:fragment="page-js">
+</th:block>
+
+</body>
+</html>
