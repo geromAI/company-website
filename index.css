@@ -1,0 +1,859 @@
+/* ==========================================================
+   GEROMAI — TEMPORARY LANDING PAGE
+   ========================================================== */
+
+:root {
+
+    --deep-space: #020817;
+    --deep-blue: #07152D;
+
+    --electric-blue: #146BFF;
+    --bright-blue: #008CFF;
+    --cyan: #00D9FF;
+    --light-cyan: #63E6FF;
+
+    --purple: #643BFF;
+    --violet: #8B3DFF;
+
+    --white: #FFFFFF;
+    --text-secondary: #A8B3C7;
+    --muted: #6F7D95;
+
+    --font-main:
+            "Inter",
+            "Helvetica Neue",
+            Helvetica,
+            Arial,
+            sans-serif;
+
+    --gradient:
+            linear-gradient(
+                    135deg,
+                    #643BFF 0%,
+                    #146BFF 35%,
+                    #008CFF 65%,
+                    #00D9FF 100%
+            );
+}
+
+
+/* ==========================================================
+   RESET
+   ========================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+html {
+    margin: 0;
+    padding: 0;
+
+    background: var(--deep-space);
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+
+    min-width: 200px;
+
+    background: var(--deep-space);
+
+    color: var(--white);
+
+    font-family: var(--font-main);
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* ==========================================================
+   PAGE
+   ========================================================== */
+
+.coming-soon {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+    min-height: 100svh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    isolation: isolate;
+}
+
+
+/* ==========================================================
+   GRID
+   ========================================================== */
+
+.background-grid {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+            linear-gradient(
+                    rgba(255, 255, 255, .018) 1px,
+                    transparent 1px
+            ),
+            linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, .018) 1px,
+                    transparent 1px
+            );
+
+    background-size: 70px 70px;
+
+    -webkit-mask-image:
+            radial-gradient(
+                    circle at center,
+                    black 10%,
+                    transparent 78%
+            );
+
+    mask-image:
+            radial-gradient(
+                    circle at center,
+                    black 10%,
+                    transparent 78%
+            );
+
+    pointer-events: none;
+
+    z-index: -3;
+}
+
+
+/* ==========================================================
+   BACKGROUND GLOWS
+   ========================================================== */
+
+.background-glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(130px);
+
+    pointer-events: none;
+
+    z-index: -2;
+}
+
+
+.glow-one {
+    width: 650px;
+    height: 650px;
+
+    left: 50%;
+    top: -480px;
+
+    transform: translateX(-50%);
+
+    background:
+            rgba(0, 140, 255, .17);
+}
+
+
+.glow-two {
+    width: 450px;
+    height: 450px;
+
+    left: -260px;
+    bottom: -230px;
+
+    background:
+            rgba(100, 59, 255, .10);
+}
+
+
+.glow-three {
+    width: 420px;
+    height: 420px;
+
+    right: -250px;
+    bottom: -220px;
+
+    background:
+            rgba(0, 217, 255, .07);
+}
+
+
+/* ==========================================================
+   MAIN CONTAINER
+   ========================================================== */
+
+.coming-soon-container {
+    position: relative;
+
+    width: min(100% - 40px, 1000px);
+
+    margin: 0 auto;
+
+    padding:
+            30px 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    z-index: 2;
+}
+
+
+/* ==========================================================
+   ICON SCENE
+   ========================================================== */
+
+.logo-scene {
+    position: relative;
+
+    width: 240px;
+    height: 240px;
+
+    margin-bottom: 28px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ==========================================================
+   APPROVED GEROMAI ICON
+   ========================================================== */
+
+.geromai-icon {
+    position: relative;
+
+    width: 145px;
+    height: 145px;
+
+    display: block;
+
+    object-fit: contain;
+
+    z-index: 5;
+
+    filter:
+            drop-shadow(
+                    0 25px 45px
+                    rgba(20, 107, 255, .25)
+            )
+            drop-shadow(
+                    0 0 25px
+                    rgba(0, 217, 255, .10)
+            );
+}
+
+
+.logo-glow {
+    position: absolute;
+
+    width: 160px;
+    height: 160px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+            translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+            radial-gradient(
+                    circle,
+                    rgba(0, 217, 255, .20),
+                    rgba(20, 107, 255, .13) 38%,
+                    rgba(100, 59, 255, .07) 58%,
+                    transparent 75%
+            );
+
+    filter: blur(28px);
+
+    z-index: 1;
+}
+
+
+/* ==========================================================
+   ORBITS
+   ========================================================== */
+
+.orbit {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border:
+            1px solid
+            rgba(99, 230, 255, .15);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+.orbit-one {
+    width: 215px;
+    height: 215px;
+
+    transform:
+            translate(-50%, -50%)
+            rotate(25deg)
+            scaleY(.54);
+}
+
+
+.orbit-two {
+    width: 255px;
+    height: 255px;
+
+    transform:
+            translate(-50%, -50%)
+            rotate(-40deg)
+            scaleY(.50);
+}
+
+
+/* ==========================================================
+   ORBIT NODES
+   ========================================================== */
+
+.orbit-node {
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--cyan);
+
+    box-shadow:
+            0 0 15px
+            rgba(0, 217, 255, .9);
+
+    z-index: 6;
+
+    animation:
+            nodePulse
+            2.5s
+            ease-in-out
+            infinite;
+}
+
+
+.node-one {
+    top: 42px;
+    right: 46px;
+}
+
+
+.node-two {
+    bottom: 47px;
+    left: 38px;
+
+    animation-delay: .8s;
+}
+
+
+.node-three {
+    width: 5px;
+    height: 5px;
+
+    right: 18px;
+    bottom: 85px;
+
+    background: var(--violet);
+
+    box-shadow:
+            0 0 15px
+            rgba(139, 61, 255, .9);
+
+    animation-delay: 1.5s;
+}
+
+
+@keyframes nodePulse {
+
+    0%,
+    100% {
+        opacity: .4;
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+                scale(1.25);
+    }
+
+}
+
+
+/* ==========================================================
+   STATUS
+   ========================================================== */
+
+.status {
+    margin-bottom: 25px;
+
+    padding:
+            8px 14px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    border:
+            1px solid
+            rgba(0, 217, 255, .18);
+
+    border-radius: 100px;
+
+    background:
+            rgba(0, 217, 255, .045);
+
+    color: var(--light-cyan);
+
+    font-size: .62rem;
+
+    font-weight: 700;
+
+    letter-spacing: .16em;
+
+    text-transform: uppercase;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: var(--cyan);
+
+    box-shadow:
+            0 0 14px
+            rgba(0, 217, 255, .9);
+
+    animation:
+            statusPulse
+            2s
+            ease-in-out
+            infinite;
+}
+
+
+@keyframes statusPulse {
+
+    0%,
+    100% {
+        opacity: .45;
+    }
+
+    50% {
+        opacity: 1;
+
+        box-shadow:
+                0 0 20px
+                rgba(0, 217, 255, 1);
+    }
+
+}
+
+
+/* ==========================================================
+   WORDMARK
+   ========================================================== */
+
+.geromai-logo {
+    width: 190px;
+    height: auto;
+
+    display: block;
+
+    margin-bottom: 32px;
+}
+
+
+/* ==========================================================
+   HEADING
+   ========================================================== */
+
+h1 {
+    max-width: 900px;
+
+    margin:
+            0 auto 24px;
+
+    color: var(--white);
+
+    font-size:
+            clamp(3.5rem, 7vw, 6.7rem);
+
+    font-weight: 700;
+
+    line-height: .96;
+
+    letter-spacing: -.06em;
+}
+
+
+h1 span {
+    display: block;
+
+    background: var(--gradient);
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* ==========================================================
+   DESCRIPTION
+   ========================================================== */
+
+.description {
+    max-width: 580px;
+
+    margin:
+            0 auto;
+
+    color: var(--text-secondary);
+
+    font-size: 1.02rem;
+
+    line-height: 1.8;
+}
+
+
+/* ==========================================================
+   BUILD PROGRESS
+   ========================================================== */
+
+.build-progress {
+    width:
+            min(100%, 540px);
+
+    margin-top: 55px;
+}
+
+
+.progress-info {
+    margin-bottom: 11px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    color: var(--muted);
+
+    font-size: .58rem;
+
+    font-weight: 700;
+
+    letter-spacing: .17em;
+}
+
+
+.progress-info span:last-child {
+    color: var(--cyan);
+}
+
+
+.progress-track {
+    position: relative;
+
+    width: 100%;
+    height: 2px;
+
+    overflow: hidden;
+
+    border-radius: 100px;
+
+    background:
+            rgba(255, 255, 255, .07);
+}
+
+
+.progress-bar {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    width: 32%;
+
+    border-radius: inherit;
+
+    background: var(--gradient);
+
+    box-shadow:
+            0 0 18px
+            rgba(0, 217, 255, .45);
+
+    animation:
+            buildProgress
+            2.8s
+            ease-in-out
+            infinite;
+}
+
+
+@keyframes buildProgress {
+
+    0% {
+        left: -32%;
+    }
+
+    55% {
+        left: 100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+
+}
+
+
+/* ==========================================================
+   SLOGAN
+   ========================================================== */
+
+.slogan {
+    width:
+            min(100%, 600px);
+
+    margin-top: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+}
+
+
+.slogan > span {
+    height: 1px;
+
+    flex: 1;
+
+    background:
+            linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255, 255, 255, .12)
+            );
+}
+
+
+.slogan > span:last-child {
+    background:
+            linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, .12),
+                    transparent
+            );
+}
+
+
+.slogan p {
+    margin: 0;
+
+    flex-shrink: 0;
+
+    color: var(--muted);
+
+    font-size: .62rem;
+
+    font-weight: 600;
+
+    letter-spacing: .12em;
+
+    text-transform: uppercase;
+}
+
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 700px) {
+
+    .coming-soon-container {
+        width:
+                min(100% - 32px, 1000px);
+
+        padding:
+               45px 0;
+    }
+
+
+    .logo-scene {
+        width: 200px;
+        height: 200px;
+
+        margin-bottom: 22px;
+    }
+
+
+    .geromai-icon {
+        width: 125px;
+        height: 125px;
+    }
+
+
+    .logo-glow {
+        width: 135px;
+        height: 135px;
+    }
+
+
+    .orbit-one {
+        width: 180px;
+        height: 180px;
+    }
+
+
+    .orbit-two {
+        width: 210px;
+        height: 210px;
+    }
+
+
+    .node-one {
+        top: 31px;
+        right: 35px;
+    }
+
+
+    .node-two {
+        bottom: 36px;
+        left: 29px;
+    }
+
+
+    .node-three {
+        right: 13px;
+        bottom: 68px;
+    }
+
+
+    .geromai-logo {
+        width: 165px;
+
+        margin-bottom: 27px;
+    }
+
+
+    h1 {
+        font-size:
+                clamp(3rem, 14vw, 4.8rem);
+    }
+
+
+    .description {
+        font-size: .94rem;
+    }
+
+
+    .build-progress {
+        margin-top: 45px;
+    }
+
+
+    .slogan {
+        margin-top: 40px;
+
+        gap: 11px;
+    }
+
+
+    .slogan p {
+        font-size: .52rem;
+
+        letter-spacing: .08em;
+    }
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+   ========================================================== */
+
+@media (max-width: 430px) {
+
+    .status {
+        font-size: .55rem;
+
+        letter-spacing: .11em;
+    }
+
+
+    .slogan > span {
+        display: none;
+    }
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .status-dot,
+    .orbit-node,
+    .progress-bar {
+        animation: none;
+    }
+
+
+    .progress-bar {
+        left: 0;
+
+        width: 42%;
+    }
+
+}
